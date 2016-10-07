@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+table {
+  border: 1px solid rgb(135,0,0);
+  margin: 10px;
+  width: 800px;
+}
+caption {
+  font-size: 40px;
+  font-family: 'Poiret One', cursive;
+}
+
+th {
+  color: white;
+  background: rgb(135,0,0);
+}
+
+img#cover {
+  position: fixed;
+  width: 300px;
+  height: 400px;
+  top:150px;
+  left:1045px;
+  display: none;
+  box-shadow: 2px 6px 20px 0px rgba(0,0,0,1);
+}
+
+td a {
+  color: black;
+  font-weight: bolder;
+}
+
+td a:hover {
+  text-decoration: none;
+}
+
+td#total, td#total-completed {
+  background: rgb(135,0,0);
+  color: white;
+  font-weight: bolder;
+  text-align: right;
+}
+
+.centro {
+  text-align: center;
+}
+
+canvas {
+  width: 500px;
+  height: 20px;
+  border-style: none;
+}
+
+tbody tr td:nth-child(1) {
+  width: 50%;
+}
+
+input, select{
+  width: 100%;
+}

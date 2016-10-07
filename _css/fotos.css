@@ -1,0 +1,85 @@
+@charset "utf-8";
+
+div#album-fotos {
+  width: 700px;
+  margin: 0px auto;
+  padding: 50px;
+  overflow: hidden;
+}
+
+div#album-fotos figure img {
+  float: left;
+  width: 200px;
+  height: 200px;
+  border: 5px solid #ffffff;
+  background-color: #ffffff;;
+  box-shadow: 1px 1px 3px rgba(0,0,0, .4);
+  z-index: 1px;
+  cursor: pointer;
+}
+
+div#album-fotos figure img:hover {
+  --opacity: 0.5;
+  --background-color: rgba(0,0,0,0.5);
+
+}
+
+div#album-fotos figure {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: inline-block;
+  margin: 10px;
+}
+
+div#album-fotos figure figcaption {
+  color: white;
+  font-family: 'Poiret One', cursive;
+  background-color: rgba(0,0,0,.5);
+  font-size: 20pt;
+}
+
+.full-image {
+  position: fixed;
+  left: 170px;
+  top: 10px;
+  z-index: 2;
+  opacity: 1;
+}
+
+.subtitle-position {
+  position: fixed;
+  top: 550px;
+  left: 190px;
+  z-index: 3;
+}
+
+img#arrow-left {
+  position: fixed;
+  left: 70px;
+  top: 280px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+img#arrow-right {
+  position: fixed;
+  left: 1180px;
+  top: 280px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+img#arrow-right:hover, img#arrow-left:hover {
+  opacity: 0.5
+}
+
+.shadow {
+  position: fixed;
+  top:0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-color: rgba(0,0,0,.7);
+}

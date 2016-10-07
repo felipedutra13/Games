@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+img#capa {
+  position: fixed;
+  width: 200px;
+  height: 250px;
+  top:350px;
+  left:980px;
+}
+
+td:hover {
+  text-decoration: underline;
+}

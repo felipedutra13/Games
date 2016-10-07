@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Problem 3 - Largest prime factor</title>
+	</head>
+	<body>
+		<script>
+			//var val = 600851475143;
+			var val = 13195;
+			var largestPrime = 1;
+			var index = 3;
+			//while(index<300425737572)
+			while(index<6598)
+			{
+				if(val%index==0)
+					if(index%3!=0 && index%5!=0 && index%7!=0 && index%11!=0)
+						largestPrime = index;					
+				index += 2;
+			}
+			alert("Largest Prime: "+largestPrime);
+		</script>
+	</body>
+</html>

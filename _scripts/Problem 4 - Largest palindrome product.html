@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Problem 4 - Largest palindrome product</title>
+	</head>
+	<body>
+		<script>
+		var result = 0;
+		var largestPalindrome = 0;
+			for(var i=0; i<1000; i++)
+			{
+				for(var j=0; j<1000; j++)
+				{
+					result = i*j;
+					var str = String(result);
+					if(str == str.split("").reverse().join("") && result > largestPalindrome)
+						largestPalindrome = result;
+				}
+			}
+			alert(largestPalindrome);
+		</script>
+	</body>
+</html>

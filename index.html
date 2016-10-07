@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8"/>
+  <title>Home</title>
+  <link rel="stylesheet" type="text/css" href="_css/estilo.css"/>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+  <script src="_javascript/funcoes.js"></script>
+</head>
+<body>
+  <div id="interface">
+    <header id="cabecalho">
+      <h1>Videogames</h1>
+      <h2>Track what you're doing!</h2>
+
+      <img id="icone" src="_imagens/games.png"/>
+
+      <nav id="menu">
+        <h1>Main Menu</h1>
+        <ul id="menu-principal">
+          <li onmouseover="mudaFoto('games.png')" onmouseout="mudaFoto('games.png')"><a href="index.html">Home</a></li>
+          <li id="mostrar">Menu
+            <ul id="submenu">
+              <li onmouseover="mudaFoto('mario-home.png')" onmouseout="mudaFoto('games.png')"><a href="games.html">Games</a></li>
+              <li onmouseover="mudaFoto('series.png')" onmouseout="mudaFoto('games.png')"><a href="series.html">Series</a></li>
+              <li onmouseover="mudaFoto('movies.png')" onmouseout="mudaFoto('games.png')"><a href="movies.html">Movies</a></li>
+              <li onmouseover="mudaFoto('books.png')" onmouseout="mudaFoto('games.png')"><a href="books.html">Books</a></li>
+              <li onmouseover="mudaFoto('laptop.png')" onmouseout="mudaFoto('games.png')"><a href="development.html">Development</a></li>
+              <li onmouseover="mudaFoto('ryu.png')" onmouseout="mudaFoto('games.png')"><a href="fotos.html">Images</a></li>
+              <li onmouseover="mudaFoto('dk-drums.png')" onmouseout="mudaFoto('games.png')"><a href="theme-songs.html">Songs</a></li>
+            </ul>
+          </li>
+        </ul>
+      </header>
+
+      <div id="images-panel">
+        <figure class="foto-legenda">
+          <img id="main-image" src="_imagens/galeria-01.jpg"/>
+        </figure>
+
+        <div id="radios">
+          <img src="_imagens/radio-checked.png"/>
+          <img src="_imagens/radio-not.png"/>
+          <img src="_imagens/radio-not.png"/>
+          <img src="_imagens/radio-not.png"/>
+        </div>
+      </div>
+
+      <section id="corpo">
+        <article id="noticiaprincipal">
+          <header id="cabecalho-artigo">
+            <hgroup>
+              <h3>Home</h3>
+              <h1>News</h1>
+              <h2>by Felipe Dutra</h2>
+              <h3 class="direita">Updated at July/21/2016</h3>
+            </hgroup>
+          </header>
+
+          <h2>Test</h2>
+          <p>Phasellus consectetur odio sed fringilla iaculis. Nullam lorem metus, elementum in dui ut, pulvinar dignissim diam. Ut sodales nisi eu ex volutpat, consectetur dapibus nulla feugiat. Aliquam at nisi vitae ante tincidunt commodo in in lectus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean id ante in elit aliquet commodo. Donec faucibus leo magna, ut scelerisque massa laoreet sed. Curabitur dignissim neque quis odio faucibus, in dapibus magna tincidunt. Integer fringilla quam vitae lectus mattis porta. Integer ornare ante suscipit, vulputate mauris eget, venenatis neque. Suspendisse nunc diam, pharetra id laoreet in, bibendum ac sem. Ut volutpat quam sed dui vestibulum volutpat.</p>
+          <h2>Test 2</h2>
+          <p>Proin at auctor urna. Ut quis mollis nibh. In faucibus neque at ante pretium, sed consequat turpis faucibus. Pellentesque mattis ornare molestie. Nulla porta varius porttitor. Praesent facilisis quam eleifend cursus fermentum. Pellentesque orci est, faucibus quis nulla et, dignissim cursus nunc. Nam aliquet efficitur quam a scelerisque.</p>
+        </article>
+      </section>
+      <aside id="lateral">
+        <h1>Other</h1>
+        <h2>Recently Video</h2>
+
+        <iframe id="songs" width="350" height="197" src="https://www.youtube.com/embed/L9op8mhTQy8" frameborder="0" allowfullscreen>
+        </iframe>
+
+        <h2>News</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed ligula lectus. Maecenas pellentesque, velit vel volutpat volutpat, nibh diam facilisis dolor, at pretium sapien odio et lectus. Curabitur lobortis diam libero, et mollis lacus porta a. Pellentesque et iaculis nisl. Vivamus porta risus quis metus pulvinar bibendum. Mauris quis magna blandit, cursus nunc at, euismod leo. Sed non sagittis neque. Praesent sodales justo sed suscipit eleifend. Phasellus at mollis leo. Aenean consectetur elementum lobortis. Praesent pellentesque bibendum condimentum.</p>
+      </aside>
+      <footer id="rodape">
+        <p>Copyright &copy; 2016 - by Felipe Dutra<br/>
+          <a href="https://www.facebook.com/felipe.dutra.501" target="blank">Facebook</a></p>
+        </footer>
+      </div>
+    </body>
+    </html>

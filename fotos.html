@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8"/>
+  <title>Images</title>
+  <link rel="stylesheet" type="text/css" href="_css/estilo.css"/>
+  <link rel="stylesheet" type="text/css" href="_css/fotos.css"/>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+  <script src="_javascript/images.js"></script>
+  <script src="_javascript/funcoes.js"></script>
+</head>
+<body>
+  <div id="interface">
+    <header id="cabecalho">
+      <h1>Videogames</h1>
+      <h2>Track what you're doing!</h2>
+
+      <img id="icone" src="_imagens/ryu.png"/>
+
+      <nav id="menu">
+        <h1>Main Menu</h1>
+        <ul id="menu-principal">
+          <li onmouseover="mudaFoto('games.png')" onmouseout="mudaFoto('ryu.png')"><a href="index.html">Home</a></li>
+          <li id="mostrar">Menu
+            <ul id="submenu">
+              <li onmouseover="mudaFoto('mario-home.png')" onmouseout="mudaFoto('ryu.png')"><a href="games.html">Games</a></li>
+              <li onmouseover="mudaFoto('series.png')" onmouseout="mudaFoto('ryu.png')"><a href="series.html">Series</a></li>
+              <li onmouseover="mudaFoto('movies.png')" onmouseout="mudaFoto('ryu.png')"><a href="movies.html">Movies</a></li>
+              <li onmouseover="mudaFoto('books.png')" onmouseout="mudaFoto('ryu.png')"><a href="books.html">Books</a></li>
+              <li onmouseover="mudaFoto('laptop.png')" onmouseout="mudaFoto('ryu.png')"><a href="development.html">Development</a></li>
+              <li onmouseover="mudaFoto('ryu.png')" onmouseout="mudaFoto('ryu.png')"><a href="fotos.html">Images</a></li>
+              <li onmouseover="mudaFoto('dk-drums.png')" onmouseout="mudaFoto('ryu.png')"><a href="theme-songs.html">Songs</a></li>
+            </ul>
+          </li>
+        </ul>
+      </header>
+
+      <section id="corpo-full">
+        <article id="noticiaprincipal">
+          <header id="cabecalho-artigo">
+            <hgroup>
+              <h3>Home > Images</h3>
+              <h1>Images</h1>
+              <h2>by Felipe Dutra</h2>
+              <h3 class="direita">Updated at June/17/2016</h3>
+            </hgroup>
+          </header>
+
+          <div id="album-fotos">
+            <figure><img src="http://fullhdpictures.com/wp-content/uploads/2016/06/The-Last-of-Us-HD-Wallpaper.jpg" id="first-image"/><figcaption>The Last of Us</figcaption></figure>
+            <figure><img src="_imagens/galeria-02.jpg"/><figcaption>God of War</figcaption></figure>
+            <figure><img src="_imagens/galeria-03.jpg"/><figcaption>Halo: Combat Evolved</figcaption></figure>
+            <figure><img src="http://wallpapercave.com/wp/R3CF5u0.jpg" id="last-image"/><figcaption>Teste</figcaption></figure>
+          </div>
+
+          <img id="arrow-left" src="_imagens/arrow-left.png"/>
+          <img id="arrow-right" src="_imagens/arrow-right.png"/>
+
+
+        </article>
+      </section>
+      <footer id="rodape">
+        <p>Copyright &copy; 2016 - by Felipe Dutra<br/>
+          <a href="https://www.facebook.com/felipe.dutra.501" target="blank">Facebook</a></p>
+        </footer>
+        <div id="full-shadow">
+        </div>
+      </div>
+    </body>
+    </html>
