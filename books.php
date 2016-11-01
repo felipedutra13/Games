@@ -23,10 +23,10 @@
           <li onmouseover="mudaFoto('games.png')" onmouseout="mudaFoto('books.png')"><a href="index.html">Home</a></li>
           <li id="mostrar">Menu
             <ul id="submenu">
-              <li onmouseover="mudaFoto('mario-home.png')" onmouseout="mudaFoto('books.png')"><a href="games.html">Games</a></li>
-              <li onmouseover="mudaFoto('series.png')" onmouseout="mudaFoto('books.png')"><a href="series.html">Series</a></li>
+              <li onmouseover="mudaFoto('mario-home.png')" onmouseout="mudaFoto('books.png')"><a href="games.php">Games</a></li>
+              <li onmouseover="mudaFoto('series.png')" onmouseout="mudaFoto('books.png')"><a href="series.php">Series</a></li>
               <li onmouseover="mudaFoto('movies.png')" onmouseout="mudaFoto('books.png')"><a href="movies.html">Movies</a></li>
-              <li onmouseover="mudaFoto('books.png')" onmouseout="mudaFoto('books.png')"><a href="books.html">Books</a></li>
+              <li onmouseover="mudaFoto('books.png')" onmouseout="mudaFoto('books.png')"><a href="books.php">Books</a></li>
               <li onmouseover="mudaFoto('laptop.png')" onmouseout="mudaFoto('books.png')"><a href="development.html">Development</a></li>
               <li onmouseover="mudaFoto('ryu.png')" onmouseout="mudaFoto('books.png')"><a href="fotos.html">Images</a></li>
               <li onmouseover="mudaFoto('dk-drums.png')" onmouseout="mudaFoto('books.png')"><a href="theme-songs.html">Songs</a></li>

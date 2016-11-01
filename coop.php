@@ -14,7 +14,7 @@
       <h1>Videogames</h1>
       <h2>Track what you're doing!</h2>
 
-      <img id="icone" src="_imagens/mario-home.png"/>
+      <img id="icone" src="_imagens/coop.png"/>
 
       <nav id="menu">
         <h1>Main Menu</h1>
@@ -22,14 +22,14 @@
           <li onmouseover="mudaFoto('games.png')" onmouseout="mudaFoto('mario-home.png')"><a href="index.html">Home</a></li>
           <li id="mostrar">Menu
             <ul id="submenu">
-              <li onmouseover="mudaFoto('mario-home.png')" onmouseout="mudaFoto('mario-home.png')"><a href="games.php">Games</a></li>
+              <li onmouseover="mudaFoto('mario-home.png')" onmouseout="mudaFoto('coop.png')"><a href="games.php">Games</a></li>
 			  <li onmouseover="mudaFoto('coop.png')" onmouseout="mudaFoto('coop.png')"><a href="coop.php">Co-op</a></li>
-              <li onmouseover="mudaFoto('series.png')" onmouseout="mudaFoto('mario-home.png')"><a href="series.php">Series</a></li>
-              <li onmouseover="mudaFoto('movies.png')" onmouseout="mudaFoto('mario-home.png')"><a href="movies.html">Movies</a></li>
-              <li onmouseover="mudaFoto('books.png')" onmouseout="mudaFoto('mario-home.png')"><a href="books.php">Books</a></li>
-              <li onmouseover="mudaFoto('laptop.png')" onmouseout="mudaFoto('mario-home.png')"><a href="development.html">Development</a></li>
-              <li onmouseover="mudaFoto('ryu.png')" onmouseout="mudaFoto('mario-home.png')"><a href="fotos.html">Images</a></li>
-              <li onmouseover="mudaFoto('dk-drums.png')" onmouseout="mudaFoto('mario-home.png')"><a href="theme-songs.html">Songs</a></li>
+              <li onmouseover="mudaFoto('series.png')" onmouseout="mudaFoto('coop.png')"><a href="series.php">Series</a></li>
+              <li onmouseover="mudaFoto('movies.png')" onmouseout="mudaFoto('coop.png')"><a href="movies.html">Movies</a></li>
+              <li onmouseover="mudaFoto('books.png')" onmouseout="mudaFoto('coop.png')"><a href="books.php">Books</a></li>
+              <li onmouseover="mudaFoto('laptop.png')" onmouseout="mudaFoto('coop.png')"><a href="development.html">Development</a></li>
+              <li onmouseover="mudaFoto('ryu.png')" onmouseout="mudaFoto('coop.png')"><a href="fotos.html">Images</a></li>
+              <li onmouseover="mudaFoto('dk-drums.png')" onmouseout="mudaFoto('coop.png')"><a href="theme-songs.html">Songs</a></li>
             </ul>
           </li>
         </ul>
@@ -49,8 +49,8 @@
       </section>
       <table id="tabela">
         <thead>
-          <caption>Playthroughs</caption>
-          <tr><th>Name</th><th>Platform</th><th>Genre</th><th>Status</th></tr>
+          <caption>Playthroughs Co-Op games</caption>
+          <tr><th>Name</th><th>Platform</th><th>Genre</th></tr>
           <tr>
 		  
             <th><input type="text" id="txtColuna1"/></th>
@@ -78,7 +78,7 @@
 				  <option value="All">All</option>
 				  <option value="Action">Action</option>
 				  <option value="Adventure">Adventure</option>
-				  <option value="Beat 'em up">Beat 'em up</option>
+				  <option value="Beat ''em up">Beat ''em up</option>
 				  <option value="Fighting">Fighting</option>
 				  <option value="FPS">FPS</option>
 				  <option value="Hack and Slash">Hack and Slash</option>
@@ -88,12 +88,6 @@
 				  <option value="RPG">RPG</option>
 				  <option value="Strategy">Strategy</option>
 				  <option value="Survival Horror">Survival Horror</option>				  				  				  
-				</select></th>
-            <th><select id="status">
-				  <option value="All">All</option>
-				  <option value="Backlog">Backlog</option>
-				  <option value="Completed">Completed</option>
-				  <option value="Playing">Playing</option>
 				</select></th>
           </tr>
         </thead>
@@ -105,7 +99,7 @@
 				///////////////////////////////
 				
 				/////Le as mensagens do banco
-				$sql = "SELECT `name`, `plattform`, `genre`, `status`, `image` FROM `games` ORDER BY `name`"; 
+				$sql = "SELECT `name`, `platform`, `genre`, `image` FROM `coop` ORDER BY `name`"; 
 				$result = mysql_query($sql, $conecta); 
 				
 				
@@ -116,7 +110,7 @@
 				/* Escreve resultados até que não haja mais linhas na tabela */ 
 				 
 				while($consulta = mysql_fetch_array($result)) { 
-				   echo "<tr><td><a href='#'>$consulta[name]</a></td><td>$consulta[plattform]</td><td>$consulta[genre]</td><td>$consulta[status]</td></tr>";
+				   echo "<tr><td><a href='#'>$consulta[name]</a></td><td>$consulta[platform]</td><td>$consulta[genre]</td></tr>";
 					$arrayCovers[$index] = "$consulta[image]";
 					$index++;
 				}
@@ -126,7 +120,6 @@
 			?>
 			
 			<script>
-				//alert("teste");
 				//variáveis
 				var i, array_covers, string_array;
 				//recebe a string com elementos separados, vindos do PHP
@@ -149,33 +142,6 @@
 	  <input id="random" type="button" value="Choose a random game!"/>
 
       <img id="cover" src=""/>
-
-      <table id="countPlatform">
-        <thead>
-          <caption>Completed</caption>
-          <tr><th>Platform</th><th>Total</th><th>%</th></tr>
-        </thead>
-        <tbody id="games-completed">
-          <tr><td>Android</td><td id="total-android" class="centro"></td><td><canvas id="graph-android"></canvas></td></tr>
-          <tr><td>Arcade</td><td id="total-arcade" class="centro"></td><td><canvas id="graph-arcade"></canvas></td></tr>
-          <tr><td>Game Boy Advance</td><td id="total-gameboyadvance" class="centro"></td><td><canvas id="graph-gameboyadvance"></canvas></td></tr>
-          <tr><td>GameCube</td><td id="total-gamecube" class="centro"></td><td><canvas id="graph-gamecube"></canvas></td></tr>
-          <tr><td>Mega Drive</td><td id="total-megadrive" class="centro"></td><td><canvas id="graph-megadrive"></canvas></td></tr>
-          <tr><td>Neo Geo</td><td id="total-neogeo" class="centro"></td><td><canvas id="graph-neogeo"></canvas></td></tr>
-          <tr><td>Nintendinho</td><td id="total-nes" class="centro"></td><td><canvas id="graph-nes"></canvas></td></tr>
-          <tr><td>Nintendo 64</td><td id="total-nintendo64" class="centro"></td><td><canvas id="graph-nintendo64"></canvas></td></tr>
-          <tr><td>Nintendo DS</td><td id="total-nintendods" class="centro"></td><td><canvas id="graph-nintendods"></canvas></td></tr>
-          <tr><td>PC</td><td id="total-pc" class="centro"></td><td><canvas id="graph-pc"></canvas></td></tr>
-          <tr><td>Playstation</td><td id="total-playstation1" class="centro"></td><td><canvas id="graph-play1"></canvas></td></tr>
-          <tr><td>Playstation 2</td><td id="total-playstation2" class="centro"></td><td><canvas id="graph-play2"></canvas></td></tr>
-          <tr><td>Playstation 4</td><td id="total-playstation4" class="centro"></td><td><canvas id="graph-play4"></canvas></td></tr>
-          <tr><td>Super Nintendo</td><td id="total-supernes" class="centro"></td><td><canvas id="graph-supernes"></canvas></td></tr>
-          <tr><td>Wii</td><td id="total-wii" class="centro"></td><td><canvas id="graph-wii"></canvas></td></tr>
-          <tr><td>Xbox</td><td id="total-xbox" class="centro"></td><td><canvas id="graph-xbox"></canvas></td></tr>
-          <tr><td>Xbox 360</td><td id="total-xbox360" class="centro"></td><td><canvas id="graph-360"></canvas></td></tr>
-        </tbody>
-        <tr><td id="total-completed" colspan="3"></td></tr>
-      </table>
       <footer id="rodape">
         <p>Copyright &copy; 2016 - by Felipe Dutra<br/>
           <a href="https://www.facebook.com/felipe.dutra.501" target="blank">Facebook</a></p>
