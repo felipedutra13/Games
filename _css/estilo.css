@@ -141,18 +141,12 @@ nav#menu a:hover {
 
 /* tentativa de fazer o submenu */
 ul#submenu {
-  opacity: 0;
   position: absolute;
   transition: opacity 0.5s;
 }
 
 li#mostrar:hover {
   color: white;
-}
-
-li#mostrar:hover ul#submenu {
-  display: block;
-  opacity: 1;
 }
 
 ul#submenu li {

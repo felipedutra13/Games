@@ -24,13 +24,14 @@
           <li id="mostrar">Menu
             <ul id="submenu">
               <li onmouseover="mudaFoto('mario-home.png')" onmouseout="mudaFoto('series.png')"><a href="games.php">Games</a></li>
-			  <li onmouseover="mudaFoto('coop.png')" onmouseout="mudaFoto('coop.png')"><a href="coop.php">Co-op</a></li>
+			  <li onmouseover="mudaFoto('coop.png')" onmouseout="mudaFoto('series.png')"><a href="coop.php">Co-op</a></li>
               <li onmouseover="mudaFoto('series.png')" onmouseout="mudaFoto('series.png')"><a href="series.php">Series</a></li>
-              <li onmouseover="mudaFoto('movies.png')" onmouseout="mudaFoto('series.png')"><a href="movies.html">Movies</a></li>
+              <li onmouseover="mudaFoto('movies.png')" onmouseout="mudaFoto('series.png')"><a href="movies.php">Movies</a></li>
               <li onmouseover="mudaFoto('books.png')" onmouseout="mudaFoto('series.png')"><a href="books.php">Books</a></li>
               <li onmouseover="mudaFoto('laptop.png')" onmouseout="mudaFoto('series.png')"><a href="development.html">Development</a></li>
               <li onmouseover="mudaFoto('ryu.png')" onmouseout="mudaFoto('series.png')"><a href="fotos.html">Images</a></li>
               <li onmouseover="mudaFoto('dk-drums.png')" onmouseout="mudaFoto('series.png')"><a href="theme-songs.html">Songs</a></li>
+			  <li onmouseover="mudaFoto('sql.png')" onmouseout="mudaFoto('series.png')"><a href="sql.php">SQL</a></li>
             </ul>
           </li>
         </ul>
@@ -54,7 +55,7 @@
           <caption>Watchlist</caption>
           <tr><th>Name</th><th>Genre</th><th>Status</th></tr>
           <tr>
-            <th><input type="text" id="txtColuna1"/></th>
+            <th><input type="text" id="nameFilter"/></th>
             <th> <select id="genero">
 				  <option>All</option>
 				  <option>Thriller</option>	
@@ -71,6 +72,7 @@
         <tbody id="games-list">
 		  <?php 
 				////Faz a conexão com o banco
+				header("Content-Type: text/html; charset=ISO-8859-1", true);
 				$conecta = mysql_connect("127.0.0.1", "root", "") or print (mysql_error()); 
 				mysql_select_db("games", $conecta) or print(mysql_error()); 
 				///////////////////////////////

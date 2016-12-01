@@ -6,15 +6,14 @@
 	
 	////Pega os dados do formulário
 	$name = $_POST["name"];
-	$platform = $_POST["platform"];
 	$genre = $_POST["genre"];
 	$status = $_POST["status"];
 	$image = $_POST["image"];
 	
-	echo "$name, $platform, $genre, $status $image";
+	echo "$name, $genre, $status $image";
 	
 	////escreve a query
-	$query = "INSERT INTO `games` VALUES(NULL, '$name','$platform','$genre','$status','$image');"; 
+	$query = "INSERT INTO `movies` VALUES('$name', '$genre','$status','$image');"; 
 	////executa a query no banco
 	$result = mysql_query($query, $conecta); 
 	/////fecha a conexão

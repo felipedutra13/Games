@@ -21,6 +21,7 @@
       <option value="PC">PC</option>
       <option value="Nintendo 64">Nintendo 64</option>
 	  <option value="GameCube">GameCube</option>
+	  <option value="PSP">PSP</option>
     </select>
     <select id="genero" name="genre">
       <option value="Hack and Slash">Hack and Slash</option>
@@ -33,7 +34,7 @@
       <option value="FPS">FPS</option>
       <option value="Fighting">Fighting</option>
       <option value="Puzzle">Puzzle</option>
-      <option value="Beat 'em up">Beat 'em up</option>
+      <option value="Beat ''em up">Beat ''em up</option>
       <option value="Strategy">Strategy</option>
     </select>
     <select id="status" name="status">
@@ -42,7 +43,7 @@
       <option value="Playing">Playing</option>
     </select>
 	<input type="text" name="image"/>
-    <input type="submit" id="botao" value="ADD"/>
+    <input type="submit" id="botao" value="ADD GAME"/>
 	</form>
 	<h1>---------------</h1>
 	</br>
@@ -80,10 +81,35 @@
       <option value="Strategy">Strategy</option>
     </select>
 	<input type="text" name="image"/>
-    <input type="submit" id="botao" value="ADD"/>
+    <input type="submit" id="botao" value="ADD COOP GAME"/>
 	</form>
 	<h1>---------------</h1>
 	<br>
+	<h1>Movies</h1>
+	<form action="_php/add-movies.php" method="post">
+    <input type="text" id="nome" name="name"/>
+    <select id="genero" name="genre">
+      <option value="Comedy">Comedy</option>
+      <option value="Drama">Drama</option>
+      <option value="Thriller">Thriller</option>
+      <option value="Anime">Anime</option>
+      <option value="Zombies">Zombies</option>
+      <option value="Musical">Musical</option>
+      <option value="Adventure">Adventure</option>
+      <option value="Fantasy">Fantasy</option>
+	  <option value="Action">Action</option>
+	  <option value="Horror">Horror</option>
+    </select>
+    <select id="status" name="status">
+	  <option value="Backlog">Backlog</option>
+      <option value="Watched">Watched</option>
+      <option value="Watching">Watching</option>
+    </select>
+	<input type="text" name="image"/>
+    <input type="submit" id="botao" value="ADD MOVIE"/>
+	</form>
+	<h1>---------------</h1>
+	</br>
 	<h1>Series</h1>
 	<form action="_php/add-series.php" method="post">
     <input type="text" id="nome" name="name"/>
@@ -103,7 +129,7 @@
       <option value="Watching">Watching</option>
     </select>
 	<input type="text" name="image"/>
-    <input type="submit" id="botao" value="ADD"/>
+    <input type="submit" id="botao" value="ADD SERIE"/>
 	</form>
 	<h1>---------------</h1>
 	</br>
@@ -126,7 +152,7 @@
       <option value="Reading">Reading</option>
     </select>
 	<input type="text" name="image"/>
-    <input type="submit" id="botao" value="ADD2"/>
+    <input type="submit" id="botao" value="ADD BOOK"/>
 	</form>
 	<h1>---------------</h1>
   </body>

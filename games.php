@@ -23,13 +23,14 @@
           <li id="mostrar">Menu
             <ul id="submenu">
               <li onmouseover="mudaFoto('mario-home.png')" onmouseout="mudaFoto('mario-home.png')"><a href="games.php">Games</a></li>
-			  <li onmouseover="mudaFoto('coop.png')" onmouseout="mudaFoto('coop.png')"><a href="coop.php">Co-op</a></li>
+			  <li onmouseover="mudaFoto('coop.png')" onmouseout="mudaFoto('mario-home.png')"><a href="coop.php">Co-op</a></li>
               <li onmouseover="mudaFoto('series.png')" onmouseout="mudaFoto('mario-home.png')"><a href="series.php">Series</a></li>
-              <li onmouseover="mudaFoto('movies.png')" onmouseout="mudaFoto('mario-home.png')"><a href="movies.html">Movies</a></li>
+              <li onmouseover="mudaFoto('movies.png')" onmouseout="mudaFoto('mario-home.png')"><a href="movies.php">Movies</a></li>
               <li onmouseover="mudaFoto('books.png')" onmouseout="mudaFoto('mario-home.png')"><a href="books.php">Books</a></li>
-              <li onmouseover="mudaFoto('laptop.png')" onmouseout="mudaFoto('mario-home.png')"><a href="development.html">Development</a></li>
+			  <li onmouseover="mudaFoto('laptop.png')" onmouseout="mudaFoto('ryu.png')"><a href="development.html">Development</a></li>
               <li onmouseover="mudaFoto('ryu.png')" onmouseout="mudaFoto('mario-home.png')"><a href="fotos.html">Images</a></li>
               <li onmouseover="mudaFoto('dk-drums.png')" onmouseout="mudaFoto('mario-home.png')"><a href="theme-songs.html">Songs</a></li>
+			  <li onmouseover="mudaFoto('sql.png')" onmouseout="mudaFoto('mario-home.png')"><a href="sql.php">SQL</a></li>
             </ul>
           </li>
         </ul>
@@ -53,7 +54,7 @@
           <tr><th>Name</th><th>Platform</th><th>Genre</th><th>Status</th></tr>
           <tr>
 		  
-            <th><input type="text" id="txtColuna1"/></th>
+            <th><input type="text" id="nameFilter"/></th>
             <th> <select id="plataforma">
 				  <option value="All">All</option>
 				  <option value="Android">Android</option>
@@ -69,6 +70,7 @@
 				  <option value="Playstation">Playstation</option>
 				  <option value="Playstation 2">Playstation 2</option>
 				  <option value="Playstation 4">Playstation 4</option>
+				  <option value="PSP">PSP</option>
 				  <option value="Super Nintendo">Super Nintendo</option>			  
 				  <option value="Wii">Wii</option>
 				  <option value="Xbox">Xbox</option>
@@ -100,6 +102,7 @@
         <tbody id="games-list">
 		  <?php 
 				////Faz a conexão com o banco
+				//header("Content-Type: text/html; charset=ISO-8859-1", true);
 				$conecta = mysql_connect("127.0.0.1", "root", "") or print (mysql_error()); 
 				mysql_select_db("games", $conecta) or print(mysql_error()); 
 				///////////////////////////////
@@ -169,6 +172,7 @@
           <tr><td>Playstation</td><td id="total-playstation1" class="centro"></td><td><canvas id="graph-play1"></canvas></td></tr>
           <tr><td>Playstation 2</td><td id="total-playstation2" class="centro"></td><td><canvas id="graph-play2"></canvas></td></tr>
           <tr><td>Playstation 4</td><td id="total-playstation4" class="centro"></td><td><canvas id="graph-play4"></canvas></td></tr>
+		  <tr><td>PSP</td><td id="total-psp" class="centro"></td><td><canvas id="graph-psp"></canvas></td></tr>
           <tr><td>Super Nintendo</td><td id="total-supernes" class="centro"></td><td><canvas id="graph-supernes"></canvas></td></tr>
           <tr><td>Wii</td><td id="total-wii" class="centro"></td><td><canvas id="graph-wii"></canvas></td></tr>
           <tr><td>Xbox</td><td id="total-xbox" class="centro"></td><td><canvas id="graph-xbox"></canvas></td></tr>
