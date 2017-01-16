@@ -67,8 +67,8 @@ $(function () {
 
 /////teste
 function makeFilter() {
-		for(var i=1; i<=4;i++) {
-			$("#tabela td:nth-child("+i+")").each(function(){
+		for(var i=2; i<=4;i++) {
+			$("#tabela td:nth-child("+i+"):visible").each(function(){
 				if($(this).attr("valor") != "ALL")
 				{
 					if($(this).attr("valor"))
@@ -86,7 +86,7 @@ function makeFilter() {
 /////make the table filter///////////////////////////////////////////////////////
 $(function(){
   $("#tabela select").on("change", function(){
-	$("#tabela tbody tr").show(); 
+		$("#tabela tbody tr").show(); 
 		var index = $(this).parent().index();
 		var nth = "#tabela td:nth-child("+(index+1).toString()+")";
 		$(nth).attr("valor", $(this).val().toUpperCase());

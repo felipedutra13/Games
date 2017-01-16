@@ -5,6 +5,7 @@
   <title>Movies</title>
   <link rel="stylesheet" type="text/css" href="_css/estilo.css"/>
   <link rel="stylesheet" type="text/css" href="_css/series.css"/>
+  <link rel="shortcut icon" href="_imagens/icone.png"/>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
   <script src="_javascript/funcoes.js"></script>
   <script src="_javascript/movies.js"></script>
@@ -30,7 +31,7 @@
               <li onmouseover="mudaFoto('books.png')" onmouseout="mudaFoto('movies.png')"><a href="books.php">Books</a></li>
               <li onmouseover="mudaFoto('laptop.png')" onmouseout="mudaFoto('movies.png')"><a href="development.html">Development</a></li>
               <li onmouseover="mudaFoto('ryu.png')" onmouseout="mudaFoto('movies.png')"><a href="fotos.html">Images</a></li>
-              <li onmouseover="mudaFoto('dk-drums.png')" onmouseout="mudaFoto('movies.png')"><a href="theme-songs.html">Songs</a></li>
+              <li onmouseover="mudaFoto('dk-drums.png')" onmouseout="mudaFoto('movies.png')"><a href="songs.php">Songs</a></li>
 			  <li onmouseover="mudaFoto('sql.png')" onmouseout="mudaFoto('movies.png')"><a href="sql.php">SQL</a></li>
             </ul>
           </li>
