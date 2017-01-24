@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+body {
+	display:block;
+}
+
+div#board {
+	--background: url("../images/background.jpg") no-repeat;
+	background-size: cover;
+	top:0px;
+	left:0px;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+div#board img {
+	width: 100px;
+	height: 150px;
+	--margin-left: 20px;
+	--margin-right: 20px;
+	--margin-bottom: 20px;
+	border: 1px solid #606060;
+	border-radius: 20px;
+	box-shadow: 1px 1px 1px black;
+}
+
+.card {
+	display: inline-block;
+	margin: 10px;
+	width: 100px;
+}
+
+.front, .back {
+	padding:10px;
+}
+
+#start-screen {
+	width: 100%;
+	height: 100%;
+	background-color: blue;
+	z-index: 1;
+	position:absolute;
+	top: 0px;
+	left: 0px;
+}
+#start-screen h1 {
+	left: 40%;
+	top: 30%;
+	position: absolute;
+}
+
+#start-screen h2 {
+	left: 42%;
+	top: 40%;
+	position: absolute;
+}
+
+#end-game {
+	background-color: rgb(205,205,205);
+	position: absolute;
+	top: 20%;
+	left: 35%;
+	width: 300px;
+	height: 200px;
+	display: none;
+	border: 1px solid black;
+	border-radius: 20px;
+	box-shadow: 1px 10px 10px black;
+	z-index: 1;
+}
+
+#end-game h1 {
+	left: 10%;
+	top: 25%;
+	position: absolute;
+}

@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+img#skill-cover {
+  position: fixed;
+  width: 100px;
+  height: 116px;
+  top:360px;
+  left:1045px;
+  display: none;
+}
