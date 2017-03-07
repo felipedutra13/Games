@@ -29,7 +29,7 @@
               <li onmouseover="mudaFoto('series.png')" onmouseout="mudaFoto('dk-drums.png')"><a href="series.php">Series</a></li>
               <li onmouseover="mudaFoto('movies.png')" onmouseout="mudaFoto('dk-drums.png')"><a href="movies.php">Movies</a></li>
               <li onmouseover="mudaFoto('books.png')" onmouseout="mudaFoto('dk-drums.png')"><a href="books.php">Books</a></li>
-              <li onmouseover="mudaFoto('laptop.png')" onmouseout="mudaFoto('dk-drums.png')"><a href="development.html">Development</a></li>
+              <li onmouseover="mudaFoto('laptop.png')" onmouseout="mudaFoto('dk-drums.png')"><a href="development.php">Development</a></li>
               <li onmouseover="mudaFoto('ryu.png')" onmouseout="mudaFoto('dk-drums.png')"><a href="fotos.html">Images</a></li>
               <li onmouseover="mudaFoto('dk-drums.png')" onmouseout="mudaFoto('dk-drums.png')"><a href="songs.php">Songs</a></li>
 			  <li onmouseover="mudaFoto('sql.png')" onmouseout="mudaFoto('dk-drums.png')"><a href="sql.php">SQL</a></li>

@@ -25,10 +25,11 @@
           <li id="mostrar">Menu
             <ul id="submenu">
               <li onmouseover="mudaFoto('mario-home.png')" onmouseout="mudaFoto('sql.png')"><a href="games.php">Games</a></li>
+			  <li onmouseover="mudaFoto('coop.png')" onmouseout="mudaFoto('mario-home.png')"><a href="coop.php">Co-op</a></li>
               <li onmouseover="mudaFoto('series.png')" onmouseout="mudaFoto('sql.png')"><a href="series.php">Series</a></li>
               <li onmouseover="mudaFoto('movies.png')" onmouseout="mudaFoto('sql.png')"><a href="movies.php">Movies</a></li>
               <li onmouseover="mudaFoto('books.png')" onmouseout="mudaFoto('sql.png')"><a href="books.php">Books</a></li>
-              <li onmouseover="mudaFoto('laptop.png')" onmouseout="mudaFoto('sql.png')"><a href="development.html">Development</a></li>
+              <li onmouseover="mudaFoto('laptop.png')" onmouseout="mudaFoto('sql.png')"><a href="development.php">Development</a></li>
               <li onmouseover="mudaFoto('ryu.png')" onmouseout="mudaFoto('sql.png')"><a href="fotos.html">Images</a></li>
               <li onmouseover="mudaFoto('dk-drums.png')" onmouseout="mudaFoto('sql.png')"><a href="songs.php">Songs</a></li>
 			  <li onmouseover="mudaFoto('sql.png')" onmouseout="mudaFoto('sql.png')"><a href="sql.php">SQL</a></li>
@@ -62,6 +63,7 @@
 		  <option value="Movie">Movie</option>
 		  <option value="Serie">Serie</option>
 		  <option value="Book">Book</option>
+		  <option value="DLC">DLC</option>
 		</select>
 		<input type="text" id="nome" name="name"/>
 		<select id="plataforma" name="platform">

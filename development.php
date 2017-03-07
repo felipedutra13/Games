@@ -30,7 +30,7 @@
               <li onmouseover="mudaFoto('series.png')" onmouseout="mudaFoto('mario-home.png')"><a href="series.php">Series</a></li>
               <li onmouseover="mudaFoto('movies.png')" onmouseout="mudaFoto('mario-home.png')"><a href="movies.php">Movies</a></li>
               <li onmouseover="mudaFoto('books.png')" onmouseout="mudaFoto('mario-home.png')"><a href="books.php">Books</a></li>
-			  <li onmouseover="mudaFoto('laptop.png')" onmouseout="mudaFoto('ryu.png')"><a href="development.html">Development</a></li>
+			  <li onmouseover="mudaFoto('laptop.png')" onmouseout="mudaFoto('ryu.png')"><a href="development.php">Development</a></li>
               <li onmouseover="mudaFoto('ryu.png')" onmouseout="mudaFoto('mario-home.png')"><a href="fotos.html">Images</a></li>
               <li onmouseover="mudaFoto('dk-drums.png')" onmouseout="mudaFoto('mario-home.png')"><a href="songs.php">Songs</a></li>
 			  <li onmouseover="mudaFoto('sql.png')" onmouseout="mudaFoto('mario-home.png')"><a href="sql.php">SQL</a></li>
@@ -51,6 +51,18 @@
           </header>
         </article>
       </section>
+	  
+	  <table id="tabela-games">
+        <thead>
+          <caption>GAMES</caption>
+		  <tr><th>Name</th></tr>
+        </thead>
+        <tbody>	
+			<tr><td><a href="_games/Memory Game/index.html" target="_blank">Memory Game</a></td></tr>
+			<tr><td><a href="_games/Pong/pong.html" target="_blank">Pong</a></td></tr>
+        </tbody>
+      </table>
+	  
       <table id="tabela">
         <thead>
           <caption>SKILLS</caption>
@@ -139,7 +151,8 @@
           </tr>
         </thead>
         <tbody id="skills-list">	
-			
+			<tr><td>PHP</td><td>Taking</td><td><a href="http://www.cursoemvideo.com/course-status/">Curso em Video</a></td></tr>
+			<tr><td>JavaScript</td><td>Backlog</td><td><a href="https://www.udemy.com/understand-javascript/learn/v4/content">Udemy</a></td></tr>
         </tbody>
       </table>
 

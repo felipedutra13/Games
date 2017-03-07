@@ -25,6 +25,8 @@
 		$query = "INSERT INTO `series` VALUES('$name', '$genre','$status','$image');"; 
 	else if($type == "Book")
 		$query = "INSERT INTO `books` VALUES('$name', '$genre','$status','$image');"; 
+	else if($type == "DLC")
+		$query = "INSERT INTO `dlc` VALUES('$name', '$platform', '$genre','$status','$image');"; 
 	
 	////executa a query no banco
 	$result = mysql_query($query, $conecta); 

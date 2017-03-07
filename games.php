@@ -28,7 +28,7 @@
               <li onmouseover="mudaFoto('series.png')" onmouseout="mudaFoto('mario-home.png')"><a href="series.php">Series</a></li>
               <li onmouseover="mudaFoto('movies.png')" onmouseout="mudaFoto('mario-home.png')"><a href="movies.php">Movies</a></li>
               <li onmouseover="mudaFoto('books.png')" onmouseout="mudaFoto('mario-home.png')"><a href="books.php">Books</a></li>
-			  <li onmouseover="mudaFoto('laptop.png')" onmouseout="mudaFoto('ryu.png')"><a href="development.html">Development</a></li>
+			  <li onmouseover="mudaFoto('laptop.png')" onmouseout="mudaFoto('ryu.png')"><a href="development.php">Development</a></li>
               <li onmouseover="mudaFoto('ryu.png')" onmouseout="mudaFoto('mario-home.png')"><a href="fotos.html">Images</a></li>
               <li onmouseover="mudaFoto('dk-drums.png')" onmouseout="mudaFoto('mario-home.png')"><a href="songs.php">Songs</a></li>
 			  <li onmouseover="mudaFoto('sql.png')" onmouseout="mudaFoto('mario-home.png')"><a href="sql.php">SQL</a></li>
@@ -60,8 +60,10 @@
 				  <option value="All">All</option>
 				  <option value="Android">Android</option>
 				  <option value="Arcade">Arcade</option>
+				  <option value="Game Boy">Game Boy</option>
 				  <option value="Game Boy Advance">Game Boy Advance</option>
 				  <option value="GameCube">GameCube</option>
+				  <option value="Master System">Master System</option>
 				  <option value="Mega Drive">Mega Drive</option>
 				  <option value="NeoGeo">NeoGeo</option>
 				  <option value="Nintendinho">Nintendinho</option>
@@ -150,7 +152,110 @@
         </tbody>
         <tr><td id="total" colspan="4"></td></tr>
       </table>
-	  <input id="random" type="button" value="Choose a random game!"/>
+	  <input id="random" type="button" value="Choose a random game!"/></br>
+	  <table id="tabela-dlc">
+        <thead>
+          <caption>DLC's and Expansions</caption>
+          <tr><th>Name</th><th>Platform</th><th>Genre</th><th>Status</th></tr>
+          <tr>
+		  
+            <th><input type="text" id="nameFilterDlc"/></th>
+            <th> <select id="plataforma">
+				  <option value="All">All</option>
+				  <option value="Android">Android</option>
+				  <option value="Arcade">Arcade</option>
+				  <option value="Game Boy">Game Boy</option>
+				  <option value="Game Boy Advance">Game Boy Advance</option>
+				  <option value="GameCube">GameCube</option>
+				  <option value="Master System">Master System</option>
+				  <option value="Mega Drive">Mega Drive</option>
+				  <option value="NeoGeo">NeoGeo</option>
+				  <option value="Nintendinho">Nintendinho</option>
+				  <option value="Nintendo 64">Nintendo 64</option>
+				  <option value="Nintendo DS">Nintendo DS</option>
+				  <option value="PC">PC</option>
+				  <option value="Playstation">Playstation</option>
+				  <option value="Playstation 2">Playstation 2</option>
+				  <option value="Playstation 4">Playstation 4</option>
+				  <option value="PSP">PSP</option>
+				  <option value="Super Nintendo">Super Nintendo</option>			  
+				  <option value="Wii">Wii</option>
+				  <option value="Xbox">Xbox</option>
+				  <option value="Xbox 360">Xbox 360</option>			  
+				</select></th>
+            <th><select id="genero">
+				  <option value="All">All</option>
+				  <option value="Action">Action</option>
+				  <option value="Adventure">Adventure</option>
+				  <option value="Beat 'em up">Beat 'em up</option>
+				  <option value="Fighting">Fighting</option>
+				  <option value="FPS">FPS</option>
+				  <option value="Hack and Slash">Hack and Slash</option>
+				  <option value="Plattform">Plattform</option>
+				  <option value="Puzzle">Puzzle</option>				  				  
+				  <option value="Racing">Racing</option>
+				  <option value="RPG">RPG</option>
+				  <option value="Strategy">Strategy</option>
+				  <option value="Survival Horror">Survival Horror</option>				  				  				  
+				</select></th>
+            <th><select id="status">
+				  <option value="All">All</option>
+				  <option value="Backlog">Backlog</option>
+				  <option value="Completed">Completed</option>
+				  <option value="Playing">Playing</option>
+				</select></th>
+          </tr>
+        </thead>
+	    <tbody id="games-dlc-list">
+		  <?php 
+				////Faz a conexão com o banco
+				//header("Content-Type: text/html; charset=ISO-8859-1", true);
+				$conecta = mysql_connect("127.0.0.1", "root", "") or print (mysql_error()); 
+				mysql_select_db("games", $conecta) or print(mysql_error()); 
+				///////////////////////////////
+				
+				/////Le as mensagens do banco
+				$sql = "SELECT `name`, `platform`, `genre`, `status`, `image` FROM `dlc` ORDER BY `name`"; 
+				$result = mysql_query($sql, $conecta); 
+				
+				
+				///////////////
+				$arrayCovers2 = [];
+				$index2 = 0;
+				///////////////
+				/* Escreve resultados até que não haja mais linhas na tabela */ 
+				 
+				while($consulta = mysql_fetch_array($result)) { 
+				   echo "<tr><td><a href='#'>$consulta[name]</a></td><td>$consulta[platform]</td><td>$consulta[genre]</td><td>$consulta[status]</td></tr>";
+					$arrayCovers2[$index2] = "$consulta[image]";
+					$index2++;
+				}
+				
+				$string_array2 = implode("|", $arrayCovers2);
+				////////////////////////////
+			?>
+			
+			<script>
+				//alert("teste");
+				//variáveis
+				var i, array_covers2, string_array2;
+				//recebe a string com elementos separados, vindos do PHP
+				string_array2 = "<?php echo $string_array2; ?>";
+				//transforma esta string em um array próprio do Javascript
+				array_covers2 = string_array2.split("|");
+			
+				/////change cover
+				$(function () {
+				  $("tbody#games-dlc-list td").mouseover(function () {
+					var indexCover2 = $(this).parent().index();
+					  $("img#cover").attr("src", array_covers2[indexCover2]);
+					$("img#cover").show();
+				  });
+				});
+			</script>
+        </tbody>
+		<tr><td id="total-dlc" colspan="4"></td></tr>
+      </table>
 
       <img id="cover" src=""/>
 

@@ -24,6 +24,7 @@ $(function () {
 $(document).ready(function() {
   arrayImages = ["galeria-01.jpg","galeria-02.jpg","galeria-03.jpg"];
   $("#total").html("Total:"+$("#games-list tr:visible").length);
+  $("#total-dlc").html("Total:"+$("#games-dlc-list tr:visible").length);
   srcOriginal = $("#icone").attr("src");
 });
 
@@ -60,7 +61,7 @@ $(function () {
 
 //hide the cover when the mouse is out
 $(function () {
-  $("tbody#games-list td").mouseout(function () {
+  $("tbody#games-list td, tbody#games-dlc-list td").mouseout(function () {
     $("img#cover").hide();
   });
 });
@@ -98,7 +99,49 @@ $(function(){
 	  $("#tabela tbody tr").show();
 	  makeFilter();
 	  var  filter = $("#nameFilter").val().toUpperCase();
-	  $("tr td a:visible").each(function() {
+	  $("#games-list tr td a:visible").each(function() {
+		  var nameLine = $(this).text().toUpperCase();
+		  if(nameLine.indexOf(filter) < 0)
+			  $(this).parent().parent().hide();
+	  });
+  });
+});
+//////////////////////////////////////////////////////////////////////////////////
+
+/////teste
+function makeFilterDlc() {
+		for(var i=2; i<=4;i++) {
+			$("#tabela-dlc td:nth-child("+i+"):visible").each(function(){
+				if($(this).attr("valor") != "ALL")
+				{
+					if($(this).attr("valor"))
+					if($(this).text().toUpperCase() != $(this).attr("valor").toUpperCase())
+						$(this).parent().hide();
+				
+			} else {
+				$("#tabela-dlc td:nth-child("+i+")").parent().show();
+			}
+		});}
+		$("#total-dlc").html("Total:"+$("#games-dlc-list tr:visible").length);
+}
+/////////
+
+/////make the table filter///////////////////////////////////////////////////////
+$(function(){
+  $("#tabela-dlc select").on("change", function(){
+		$("#tabela-dlc tbody tr").show(); 
+		var index = $(this).parent().index();
+		var nth = "#tabela-dlc td:nth-child("+(index+1).toString()+")";
+		$(nth).attr("valor", $(this).val().toUpperCase());
+		
+		makeFilterDlc();
+  });
+  
+  $("#nameFilterDlc").keyup(function(e) {
+	  $("#tabela-dlc tbody tr").show();
+	  makeFilterDlc();
+	  var  filter = $("#nameFilterDlc").val().toUpperCase();
+	  $("#games-dlc-list tr td a:visible").each(function() {
 		  var nameLine = $(this).text().toUpperCase();
 		  if(nameLine.indexOf(filter) < 0)
 			  $(this).parent().parent().hide();
