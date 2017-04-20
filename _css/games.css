@@ -59,9 +59,4 @@ input, select{
   width: 100%;
 }
 
-#random {
-	position: absolute;
-	width: 170px;
-	height: 25px;
-	left: 850px;
-}
+

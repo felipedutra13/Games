@@ -28,6 +28,7 @@
               <li onmouseover="mudaFoto('series.png')" onmouseout="mudaFoto('mario-home.png')"><a href="series.php">Series</a></li>
               <li onmouseover="mudaFoto('movies.png')" onmouseout="mudaFoto('mario-home.png')"><a href="movies.php">Movies</a></li>
               <li onmouseover="mudaFoto('books.png')" onmouseout="mudaFoto('mario-home.png')"><a href="books.php">Books</a></li>
+			  <li onmouseover="mudaFoto('hqs.png')" onmouseout="mudaFoto('mario-home.png')"><a href="hqs.php">HQs</a></li>
 			  <li onmouseover="mudaFoto('laptop.png')" onmouseout="mudaFoto('ryu.png')"><a href="development.php">Development</a></li>
               <li onmouseover="mudaFoto('ryu.png')" onmouseout="mudaFoto('mario-home.png')"><a href="fotos.html">Images</a></li>
               <li onmouseover="mudaFoto('dk-drums.png')" onmouseout="mudaFoto('mario-home.png')"><a href="songs.php">Songs</a></li>

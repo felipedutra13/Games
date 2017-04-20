@@ -230,3 +230,10 @@ footer#rodape {
 footer#rodape p {
   text-align: center;
 }
+
+#random {
+	position: absolute;
+	width: 170px;
+	height: 25px;
+	left: 850px;
+}
