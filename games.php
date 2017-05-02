@@ -8,6 +8,7 @@
   <link rel="shortcut icon" href="_imagens/icone.png"/>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
   <script src="_javascript/funcoes.js"></script>
+  <script src="_javascript/ajax.js"></script>
 </head>
 <body>
   <div id="interface">
@@ -70,6 +71,7 @@
 				  <option value="Nintendinho">Nintendinho</option>
 				  <option value="Nintendo 64">Nintendo 64</option>
 				  <option value="Nintendo DS">Nintendo DS</option>
+				  <option value="Nintendo 3DS">Nintendo 3DS</option>
 				  <option value="PC">PC</option>
 				  <option value="Playstation">Playstation</option>
 				  <option value="Playstation 2">Playstation 2</option>
@@ -123,7 +125,7 @@
 				/* Escreve resultados até que não haja mais linhas na tabela */ 
 				 
 				while($consulta = mysql_fetch_array($result)) { 
-				   echo "<tr><td><a href='#'>$consulta[name]</a></td><td>$consulta[plattform]</td><td>$consulta[genre]</td><td>$consulta[status]</td></tr>";
+				   echo "<tr class='jogos'><td><a href='#'>$consulta[name]</a></td><td>$consulta[plattform]</td><td>$consulta[genre]</td><td>$consulta[status]</td></tr>";
 					$arrayCovers[$index] = "$consulta[image]";
 					$index++;
 				}
@@ -174,6 +176,7 @@
 				  <option value="Nintendinho">Nintendinho</option>
 				  <option value="Nintendo 64">Nintendo 64</option>
 				  <option value="Nintendo DS">Nintendo DS</option>
+				  <option value="Nintendo 3DS">Nintendo 3DS</option>
 				  <option value="PC">PC</option>
 				  <option value="Playstation">Playstation</option>
 				  <option value="Playstation 2">Playstation 2</option>
@@ -270,11 +273,13 @@
           <tr><td>Arcade</td><td id="total-arcade" class="centro"></td><td><canvas id="graph-arcade"></canvas></td></tr>
           <tr><td>Game Boy Advance</td><td id="total-gameboyadvance" class="centro"></td><td><canvas id="graph-gameboyadvance"></canvas></td></tr>
           <tr><td>GameCube</td><td id="total-gamecube" class="centro"></td><td><canvas id="graph-gamecube"></canvas></td></tr>
+		  <tr><td>Master System</td><td id="total-mastersystem" class="centro"></td><td><canvas id="graph-mastersystem"></canvas></td></tr>
           <tr><td>Mega Drive</td><td id="total-megadrive" class="centro"></td><td><canvas id="graph-megadrive"></canvas></td></tr>
           <tr><td>Neo Geo</td><td id="total-neogeo" class="centro"></td><td><canvas id="graph-neogeo"></canvas></td></tr>
           <tr><td>Nintendinho</td><td id="total-nes" class="centro"></td><td><canvas id="graph-nes"></canvas></td></tr>
           <tr><td>Nintendo 64</td><td id="total-nintendo64" class="centro"></td><td><canvas id="graph-nintendo64"></canvas></td></tr>
           <tr><td>Nintendo DS</td><td id="total-nintendods" class="centro"></td><td><canvas id="graph-nintendods"></canvas></td></tr>
+		  <tr><td>Nintendo 3DS</td><td id="total-nintendo3ds" class="centro"></td><td><canvas id="graph-nintendo3ds"></canvas></td></tr>
           <tr><td>PC</td><td id="total-pc" class="centro"></td><td><canvas id="graph-pc"></canvas></td></tr>
           <tr><td>Playstation</td><td id="total-playstation1" class="centro"></td><td><canvas id="graph-play1"></canvas></td></tr>
           <tr><td>Playstation 2</td><td id="total-playstation2" class="centro"></td><td><canvas id="graph-play2"></canvas></td></tr>

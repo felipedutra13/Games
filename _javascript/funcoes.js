@@ -175,6 +175,7 @@ var countNeoGeo = 0;
 var countNes = 0;
 var countNintendo64 = 0;
 var countNintendoDs = 0;
+var countNintendo3Ds = 0;
 var countPC = 0;
 var countWii = 0;
 var countXbox = 0;
@@ -184,6 +185,7 @@ var countPlaystation2 = 0;
 var countPlaystation4 = 0;
 var countPsp = 0;
 var countSupernes = 0;
+var countMasterSystem = 0;
 var countTotal = 0;
 
 $(function() {
@@ -233,11 +235,16 @@ $(function() {
     countXbox++;
     else if($(this).text() == "Android")
     countAndroid++;
-    else if($(this).text() == "PSP")
+    else if($(this).text() == "Nintendo 3DS")
+    countNintendo3Ds++;
+	else if($(this).text() == "PSP")
     countPsp++;
+	else if($(this).text() == "Master System")
+    countMasterSystem++;
   });
+  console.log(countMasterSystem);
   $("#tabela tbody tr").show();
-  countTotal = countXbox360+countSupernes+countPlaystation1+countPlaystation2+countPlaystation4+countArcade+countAndroid+countXbox+countWii+countNes+countNeoGeo+countNintendo64+countNintendoDs+countGameBoyAdvance+countGameCube+countPC+countMegaDrive+countPsp;
+  countTotal = countXbox360+countSupernes+countPlaystation1+countPlaystation2+countPlaystation4+countArcade+countAndroid+countXbox+countWii+countNes+countNeoGeo+countNintendo64+countNintendoDs+countGameBoyAdvance+countGameCube+countPC+countMegaDrive+countPsp+countNintendo3Ds+countMasterSystem;
   $("#total-arcade").html(countArcade);
   $("#total-android").html(countAndroid);
   $("#total-gameboyadvance").html(countGameBoyAdvance);
@@ -247,6 +254,7 @@ $(function() {
   $("#total-nes").html(countNes);
   $("#total-nintendo64").html(countNintendo64);
   $("#total-nintendods").html(countNintendoDs);
+  $("#total-nintendo3ds").html(countNintendo3Ds);
   $("#total-pc").html(countPC);
   $("#total-wii").html(countWii);
   $("#total-xbox").html(countXbox);
@@ -256,6 +264,7 @@ $(function() {
   $("#total-playstation4").html(countPlaystation4);
   $("#total-psp").html(countPsp);
   $("#total-supernes").html(countSupernes);
+  $("#total-mastersystem").html(countMasterSystem);
   $("#total-completed").html("Total: "+countTotal);
 
   ////GRAPH////////////////////////////////////////////////////////////////////////
@@ -378,6 +387,14 @@ $(function() {
   var widthNintendoDs = 300*countNintendoDs/countTotal;
   ctx.fillRect(0,0,widthNintendoDs,200);
   //////////////////////////////////////////////////////////////
+ 
+  ////////Nintendo 3DS
+  var c=document.getElementById("graph-nintendo3ds");
+  var ctx=c.getContext("2d");
+  ctx.fillStyle="rgb(255,165,255)";
+  var widthNintendo3Ds = 300*countNintendo3Ds/countTotal;
+  ctx.fillRect(0,0,widthNintendo3Ds,200);
+  //////////////////////////////////////////////////////////////
 
   ////////PC
   var c=document.getElementById("graph-pc");
@@ -401,6 +418,14 @@ $(function() {
   ctx.fillStyle="rgb(0,128,0)";
   var widthXbox = 300*countXbox/countTotal;
   ctx.fillRect(0,0,widthXbox,200);
+  //////////////////////////////////////////////////////////////
+  
+  ////////Master System
+  var c=document.getElementById("graph-mastersystem");
+  var ctx=c.getContext("2d");
+  ctx.fillStyle="rgb(0,128,0)";
+  var widthMasterSystem = 300*countMasterSystem/countTotal;
+  ctx.fillRect(0,0,widthMasterSystem,200);
   //////////////////////////////////////////////////////////////
   ///////////////////////////////////////////////////////////////////////////////////
 });

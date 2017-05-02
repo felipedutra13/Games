@@ -81,6 +81,8 @@
 		  <option value="Nintendinho">Nintendinho</option>
 		  <option value="PC">PC</option>
 		  <option value="Nintendo 64">Nintendo 64</option>
+		  <option value="Nintendo DS">Nintendo DS</option>
+		  <option value="Nintendo 3DS">Nintendo 3DS</option>
 		  <option value="GameCube">GameCube</option>
 		  <option value="PSP">PSP</option>
 		  <option value="Master System">Master System</option>
