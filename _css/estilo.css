@@ -28,6 +28,7 @@ p {
 a {
   color: #606060;
   text-decoration: none;
+  cursor: pointer;
 }
 
 a:hover {

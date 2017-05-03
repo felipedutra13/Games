@@ -9,6 +9,7 @@
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
   <script src="_javascript/funcoes.js"></script>
   <script src="_javascript/series.js"></script>
+  <script src="_javascript/ajax.js"></script>
 </head>
 <body>
   <div id="interface">
@@ -91,7 +92,7 @@
 				/* Escreve resultados até que não haja mais linhas na tabela */ 
 				 
 				while($consulta = mysql_fetch_array($result)) { 
-				   echo "<tr><td><a href='#'>$consulta[name]</a></td><td>$consulta[genre]</td><td>$consulta[status]</td></tr>";
+				   echo "<tr class='series'><td><a>$consulta[name]</a></td><td>$consulta[genre]</td><td>$consulta[status]</td></tr>";
 					$arrayCovers[$index] = "$consulta[image]";
 					$index++;
 				}
