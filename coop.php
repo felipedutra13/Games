@@ -102,43 +102,16 @@
 				///////////////////////////////
 				
 				/////Le as mensagens do banco
-				$sql = "SELECT `name`, `platform`, `genre`, `image` FROM `coop` ORDER BY `name`"; 
+				$sql = "SELECT `name`, `platform`, `genre` FROM `coop` ORDER BY `name`"; 
 				$result = mysql_query($sql, $conecta); 
-				
-				
-				///////////////
-				$arrayCovers = [];
-				$index = 0;
+
 				///////////////
 				/* Escreve resultados até que não haja mais linhas na tabela */ 
 				 
 				while($consulta = mysql_fetch_array($result)) { 
 				   echo "<tr><td><a href='#'>$consulta[name]</a></td><td>$consulta[platform]</td><td>$consulta[genre]</td></tr>";
-					$arrayCovers[$index] = "$consulta[image]";
-					$index++;
 				}
-				
-				$string_array = implode("|", $arrayCovers);
-				////////////////////////////
 			?>
-			
-			<script>
-				//variáveis
-				var i, array_covers, string_array;
-				//recebe a string com elementos separados, vindos do PHP
-				string_array = "<?php echo $string_array; ?>";
-				//transforma esta string em um array próprio do Javascript
-				array_covers = string_array.split("|");
-			
-				/////change cover
-				$(function () {
-				  $("tbody#games-list td").mouseover(function () {
-					var indexCover = $(this).parent().index();
-					  $("img#cover").attr("src", array_covers[indexCover]);
-					$("img#cover").show();
-				  });
-				});
-			</script>
         </tbody>
         <tr><td id="total" colspan="4"></td></tr>
       </table>

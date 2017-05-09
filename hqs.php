@@ -8,7 +8,8 @@
   <link rel="shortcut icon" href="_imagens/icone.png"/>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
   <script src="_javascript/funcoes.js"></script>
-  <script src="_javascript/books.js"></script>
+  <script src="_javascript/ajax.js"></script>
+  <script src="_javascript/filtro.js"></script>
 </head>
 <body>
   <div id="interface">
@@ -52,13 +53,13 @@
         </article>
       </section>
 
-      <table id="tabela">
+      <table id="tabela-hqs">
         <thead>
           <caption>HQlist</caption>
           <tr><th>Name</th><th>Edition</th><th>Status</th></tr>
           <tr>
-            <th><input type="text" id="txtColuna1"/></th>
-            <th><input type="text" id="txtColuna2"/></th>
+            <th><input type="text" id="nameFilter"/></th>
+            <th><input type="text" id="genero"/></th>
             <th> <select id="status">
 				  <option value="All">All</option>
 				  <option value="Reading">Reading</option>
@@ -75,43 +76,14 @@
 				///////////////////////////////
 				
 				/////Le as mensagens do banco
-				$sql = "SELECT `name`, `edition`, `status`, `image` FROM `hqs` ORDER BY `name`"; 
+				$sql = "SELECT `name`, `genre`, `status` FROM `hqs` ORDER BY `name`"; 
 				$result = mysql_query($sql, $conecta); 
-				
-				
-				///////////////
-				$arrayCovers = [];
-				$index = 0;
-				///////////////
 				/* Escreve resultados até que não haja mais linhas na tabela */ 
 				 
 				while($consulta = mysql_fetch_array($result)) { 
-				   echo "<tr><td><a href='#'>$consulta[name]</a></td><td>$consulta[edition]</td><td>$consulta[status]</td></tr>";
-					$arrayCovers[$index] = "$consulta[image]";
-					$index++;
+				   echo "<tr class='hqs'><td><a>$consulta[name]</a></td><td>$consulta[genre]</td><td>$consulta[status]</td></tr>";
 				}
-				
-				$string_array = implode("|", $arrayCovers);
-				////////////////////////////
 			?>
-			
-			<script>
-				//variáveis
-				var i, array_covers, string_array;
-				//recebe a string com elementos separados, vindos do PHP
-				string_array = "<?php echo $string_array; ?>";
-				//transforma esta string em um array próprio do Javascript
-				array_covers = string_array.split("|");
-			
-				/////change cover
-				$(function () {
-				  $("tbody#games-list td").mouseover(function () {
-					var indexCover = $(this).parent().index();
-					  $("img#cover").attr("src", array_covers[indexCover]);
-					$("img#cover").show();
-				  });
-				});
-			</script>
         </tbody>
         <tr><td id="total" colspan="4"></td></tr>
       </table>

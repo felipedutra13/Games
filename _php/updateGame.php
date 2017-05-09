@@ -16,8 +16,9 @@
 		$newStatus = "Playing";
 	elseif ($status == "Playing")
 		$newStatus = "Completed";
-	//elseif ($status == "Completed")
-		//$newStatus = "Backlog";
+	elseif ($status == "Completed")
+		$newStatus = "Backlog";
+	else $newStatus = "Backlog";
 		
 	$query = "UPDATE `games` SET `status`='$newStatus' where `name`='$name' AND `plattform`='$plattform';";
 	////executa a query no banco

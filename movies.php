@@ -10,6 +10,7 @@
   <script src="_javascript/funcoes.js"></script>
   <script src="_javascript/movies.js"></script>
   <script src="_javascript/ajax.js"></script>
+  <script src="_javascript/filtro.js"></script>
 </head>
 <body>
   <div id="interface">
@@ -53,12 +54,12 @@
         </article>
       </section>
 
-      <table id="tabela">
+      <table id="tabela-movies">
         <thead>
           <caption>Watchlist</caption>
           <tr><th>Name</th><th>Genre</th><th>Status</th></tr>
           <tr>
-            <th><input type="text" id="txtColuna1"/></th>
+            <th><input type="text" id="nameFilter"/></th>
             <th> <select id="genero">
 				  <option>All</option>
 				  <option>Comedy</option>
@@ -81,43 +82,15 @@
 				///////////////////////////////
 				
 				/////Le as mensagens do banco
-				$sql = "SELECT `name`, `genre`, `status`, `image` FROM `movies` ORDER BY `name`"; 
+				$sql = "SELECT `name`, `genre`, `status` FROM `movies` ORDER BY `name`"; 
 				$result = mysql_query($sql, $conecta); 
-				
-				
-				///////////////
-				$arrayCovers = [];
-				$index = 0;
-				///////////////
+
 				/* Escreve resultados até que não haja mais linhas na tabela */ 
 				 
 				while($consulta = mysql_fetch_array($result)) { 
-				   echo "<tr class='movies'><td><a href='#'>$consulta[name]</a></td><td>$consulta[genre]</td><td>$consulta[status]</td></tr>";
-					$arrayCovers[$index] = "$consulta[image]";
-					$index++;
+				   echo "<tr class='movies'><td><a>$consulta[name]</a></td><td>$consulta[genre]</td><td>$consulta[status]</td></tr>";
 				}
-				
-				$string_array = implode("|", $arrayCovers);
-				////////////////////////////
 			?>
-			
-			<script>
-				//variáveis
-				var i, array_covers, string_array;
-				//recebe a string com elementos separados, vindos do PHP
-				string_array = "<?php echo $string_array; ?>";
-				//transforma esta string em um array próprio do Javascript
-				array_covers = string_array.split("|");
-			
-				/////change cover
-				$(function () {
-				  $("tbody#games-list td").mouseover(function () {
-					var indexCover = $(this).parent().index();
-					  $("img#cover").attr("src", array_covers[indexCover]);
-					$("img#cover").show();
-				  });
-				});
-			</script>
         </tbody>
         <tr><td id="total" colspan="4"></td></tr>
       </table>

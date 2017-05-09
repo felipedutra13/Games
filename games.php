@@ -9,6 +9,7 @@
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
   <script src="_javascript/funcoes.js"></script>
   <script src="_javascript/ajax.js"></script>
+  <script src="_javascript/filtro.js"></script>
 </head>
 <body>
   <div id="interface">
@@ -108,50 +109,20 @@
         <tbody id="games-list">
 		  <?php 
 				////Faz a conexão com o banco
-				//header("Content-Type: text/html; charset=ISO-8859-1", true);
 				$conecta = mysql_connect("127.0.0.1", "root", "") or print (mysql_error()); 
 				mysql_select_db("games", $conecta) or print(mysql_error()); 
 				///////////////////////////////
 				
 				/////Le as mensagens do banco
-				$sql = "SELECT `name`, `plattform`, `genre`, `status`, `image` FROM `games` ORDER BY `name`"; 
+				$sql = "SELECT `name`, `plattform`, `genre`, `status` FROM `games` ORDER BY `name`"; 
 				$result = mysql_query($sql, $conecta); 
 				
-				
-				///////////////
-				$arrayCovers = [];
-				$index = 0;
-				///////////////
 				/* Escreve resultados até que não haja mais linhas na tabela */ 
 				 
 				while($consulta = mysql_fetch_array($result)) { 
-				   echo "<tr class='jogos'><td><a href='#'>$consulta[name]</a></td><td>$consulta[plattform]</td><td>$consulta[genre]</td><td>$consulta[status]</td></tr>";
-					$arrayCovers[$index] = "$consulta[image]";
-					$index++;
+				   echo "<tr class='games'><td><a>$consulta[name]</a></td><td>$consulta[plattform]</td><td>$consulta[genre]</td><td>$consulta[status]</td></tr>";
 				}
-				
-				$string_array = implode("|", $arrayCovers);
-				////////////////////////////
 			?>
-			
-			<script>
-				//alert("teste");
-				//variáveis
-				var i, array_covers, string_array;
-				//recebe a string com elementos separados, vindos do PHP
-				string_array = "<?php echo $string_array; ?>";
-				//transforma esta string em um array próprio do Javascript
-				array_covers = string_array.split("|");
-			
-				/////change cover
-				$(function () {
-				  $("tbody#games-list td").mouseover(function () {
-					var indexCover = $(this).parent().index();
-					  $("img#cover").attr("src", array_covers[indexCover]);
-					$("img#cover").show();
-				  });
-				});
-			</script>
         </tbody>
         <tr><td id="total" colspan="4"></td></tr>
       </table>
@@ -163,7 +134,7 @@
           <tr>
 		  
             <th><input type="text" id="nameFilterDlc"/></th>
-            <th> <select id="plataforma">
+            <th> <select id="plataformaDlc">
 				  <option value="All">All</option>
 				  <option value="Android">Android</option>
 				  <option value="Arcade">Arcade</option>
@@ -187,7 +158,7 @@
 				  <option value="Xbox">Xbox</option>
 				  <option value="Xbox 360">Xbox 360</option>			  
 				</select></th>
-            <th><select id="genero">
+            <th><select id="generoDlc">
 				  <option value="All">All</option>
 				  <option value="Action">Action</option>
 				  <option value="Adventure">Adventure</option>
@@ -202,7 +173,7 @@
 				  <option value="Strategy">Strategy</option>
 				  <option value="Survival Horror">Survival Horror</option>				  				  				  
 				</select></th>
-            <th><select id="status">
+            <th><select id="statusDlc">
 				  <option value="All">All</option>
 				  <option value="Backlog">Backlog</option>
 				  <option value="Completed">Completed</option>
@@ -213,50 +184,21 @@
 	    <tbody id="games-dlc-list">
 		  <?php 
 				////Faz a conexão com o banco
-				//header("Content-Type: text/html; charset=ISO-8859-1", true);
 				$conecta = mysql_connect("127.0.0.1", "root", "") or print (mysql_error()); 
 				mysql_select_db("games", $conecta) or print(mysql_error()); 
 				///////////////////////////////
 				
 				/////Le as mensagens do banco
-				$sql = "SELECT `name`, `platform`, `genre`, `status`, `image` FROM `dlc` ORDER BY `name`"; 
+				$sql = "SELECT `name`, `plattform`, `genre`, `status` FROM `dlc` ORDER BY `name`"; 
 				$result = mysql_query($sql, $conecta); 
 				
-				
-				///////////////
-				$arrayCovers2 = [];
-				$index2 = 0;
 				///////////////
 				/* Escreve resultados até que não haja mais linhas na tabela */ 
 				 
 				while($consulta = mysql_fetch_array($result)) { 
-				   echo "<tr><td><a href='#'>$consulta[name]</a></td><td>$consulta[platform]</td><td>$consulta[genre]</td><td>$consulta[status]</td></tr>";
-					$arrayCovers2[$index2] = "$consulta[image]";
-					$index2++;
+				   echo "<tr class='dlc'><td><a href='#'>$consulta[name]</a></td><td>$consulta[plattform]</td><td>$consulta[genre]</td><td>$consulta[status]</td></tr>";
 				}
-				
-				$string_array2 = implode("|", $arrayCovers2);
-				////////////////////////////
 			?>
-			
-			<script>
-				//alert("teste");
-				//variáveis
-				var i, array_covers2, string_array2;
-				//recebe a string com elementos separados, vindos do PHP
-				string_array2 = "<?php echo $string_array2; ?>";
-				//transforma esta string em um array próprio do Javascript
-				array_covers2 = string_array2.split("|");
-			
-				/////change cover
-				$(function () {
-				  $("tbody#games-dlc-list td").mouseover(function () {
-					var indexCover2 = $(this).parent().index();
-					  $("img#cover").attr("src", array_covers2[indexCover2]);
-					$("img#cover").show();
-				  });
-				});
-			</script>
         </tbody>
 		<tr><td id="total-dlc" colspan="4"></td></tr>
       </table>
