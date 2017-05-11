@@ -5,7 +5,7 @@
 	///////////////////////////////
 	
 	////Pega os dados do formulário
-	$name = $_GET["name"];
+	$name = str_replace("'", "''", $_GET["name"]);
 	$status = $_GET["status"];
 	$genre = $_GET["genre"];
 	$plattform = $_GET["plattform"];

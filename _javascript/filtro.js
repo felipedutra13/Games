@@ -76,6 +76,7 @@ function makeFilter(option) {
 					$("#total").html("Total:"+$("#games-list tr").length);
 				}     
 				covers();
+				updateAll();
             }
         };
 		xmlhttp.open("GET", "_php/filter.php?status="+statusGame+"&name="+name+"&genre="+genre+"&plattform="+plattform+"&option="+option, true);

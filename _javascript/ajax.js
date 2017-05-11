@@ -1,5 +1,6 @@
-$(function () {
-	$(".jogos").click(function () {
+function updateAll() {
+	console.log("aki");
+	$(".games").click(function () {
 		var name = $("a", this).html();
 		var plattform = $("td:nth-child(2)", this).html();
 		var genre = $("td:nth-child(3)", this).html();
@@ -85,4 +86,9 @@ $(function () {
 					xmlhttp.send();
 					///////////////////////////////////
 			});
+}
+
+$(function () {
+	updateAll();
 });
+

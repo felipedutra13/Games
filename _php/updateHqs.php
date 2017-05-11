@@ -5,12 +5,12 @@
 	///////////////////////////////
 	
 	////Pega os dados do formulário
-	$name = $_GET["name"];
+	$name = str_replace("'", "''", $_GET["name"]);
 	$edition = $_GET["edition"];
 	
 	$edition += 1;
 			
-	$query = "UPDATE `hqs` SET `edition`='$edition' where `name`='$name';";
+	$query = "UPDATE `hqs` SET `genre`='$edition' where `name`='$name';";
 	////executa a query no banco
 	$result = mysql_query($query, $conecta); 
 	echo $edition;

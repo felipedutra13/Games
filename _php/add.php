@@ -21,7 +21,7 @@
 	/////fecha a conexão
 	mysql_close($conecta); 
 	
-	header("location:../gera.html");
+	header("location:../sql.php");
 	
 	//echo "Obrigado pela confirmação!"
 ?>

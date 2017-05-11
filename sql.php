@@ -59,7 +59,7 @@
 	  </br></br>
 	  <form action="_php/add.php" method="post">
 		<select id="type" name="type">
-		  <option value="Game">Game</option>
+		  <option value="games">games</option>
 		  <option value="Co-op">Co-op</option>
 		  <option value="Movie">Movie</option>
 		  <option value="Serie">Serie</option>
