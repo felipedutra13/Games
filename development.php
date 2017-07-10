@@ -61,6 +61,7 @@
         <tbody>	
 			<tr><td><a href="_games/Memory Game/index.html" target="_blank">Memory Game</a></td></tr>
 			<tr><td><a href="_games/Pong/pong.html" target="_blank">Pong</a></td></tr>
+			<tr><td><a href="_games/lyrics.html" target="_blank">Lyrics</a></td></tr>
         </tbody>
       </table>
 	  

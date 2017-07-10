@@ -6,7 +6,7 @@
 	
 	////Pega os dados do formulário
 	$option = $_POST["type"];
-	$name = $_POST["name"];
+	$name = str_replace("'", "''", $_POST["name"]);
 	$platform = $_POST["platform"];
 	$genre = $_POST["genre"];
 	$status = $_POST["status"];

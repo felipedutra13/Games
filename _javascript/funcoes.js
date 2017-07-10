@@ -58,19 +58,45 @@ $(function () {
   });
 });
 
-//choose a random game//
+//choose a random console game//
 $(function () {
-	$("#random").click(function() {
-		var total = $("#games-list tr:visible").length;
-		var tmp = Math.floor((Math.random() * total) + 1);
-		var arrayOptions = [];
-		var index = 1;
-		$("#games-list tr:visible").each(function () {
-			arrayOptions[index] = $("a",this).text();
-			index++;
-		});
-		alert(arrayOptions[tmp]);
+	$("#randomConsole").click(function() {
+		var ok = false;
+		while(!ok){
+			var total = $("#games-list tr:visible").length;
+			var tmp = Math.floor((Math.random() * total) + 1);
+			var game = $("#games-list tr:visible:nth-child("+tmp+") a").text();
+			var plattform = $("#games-list tr:visible:nth-child("+tmp+") td:nth-child(2)").text();
+			
+			if(plattform == "Xbox 360" || plattform == "Playstation 2" || plattform == "Playstation 4" || plattform == "PC" || plattform == "Xbox" || plattform == "Wii" || plattform == "GameCube"){
+				alert(game + " - " + plattform);
+				ok = true;
+			}
+		}		
+	});
+
+	//choose a random portable game//
+
+	$("#randomPortable").click(function() {
+		var ok = false;
+		while(!ok){
+			var total = $("#games-list tr:visible").length;
+			var tmp = Math.floor((Math.random() * total) + 1);
+			var game = $("#games-list tr:visible:nth-child("+tmp+") a").text();
+			var plattform = $("#games-list tr:visible:nth-child("+tmp+") td:nth-child(2)").text();
+			
+			if(plattform != "Xbox 360" && plattform != "Playstation 2" && plattform != "Playstation 4" && plattform != "PC" && plattform != "Xbox" && plattform != "Wii" && plattform != "GameCube"){
+				alert(game + " - " + plattform);
+				ok = true;
+			}
+		}		
+	});
+	
+	$("#randomPlatform").click(function () {
+		var platforms = ["Game Boy", "Game Boy Advance", "GameCube", "Master System", "Mega Drive", "Nintendinho", "Nintendo 64", "Nintendo DS", "Nintendo 3DS", "Playstation", "Playstation 2", "Playstation 4", "PSP", "Super Nintendo", "Wii", "Xbox", "Xbox 360"];
 		
+		var tmp = Math.floor(Math.random() * platforms.length);
+		alert(platforms[tmp]);
 	});
 });
 
@@ -94,6 +120,7 @@ var countPlaystation4 = 0;
 var countPsp = 0;
 var countSupernes = 0;
 var countMasterSystem = 0;
+var countGameBoy = 0;
 var countTotal = 0;
 
 $(function() {
@@ -107,6 +134,7 @@ $(function() {
       $(this).parent().hide();
     }
   });
+
 
   $('#tabela td:visible').each(function() {
     if($(this).text() == "Xbox 360")
@@ -149,9 +177,11 @@ $(function() {
     countPsp++;
 	else if($(this).text() == "Master System")
     countMasterSystem++;
+	else if($(this).text() == "Game Boy")
+    countGameBoy++;
   });
   $("#tabela tbody tr").show();
-  countTotal = countXbox360+countSupernes+countPlaystation1+countPlaystation2+countPlaystation4+countArcade+countAndroid+countXbox+countWii+countNes+countNeoGeo+countNintendo64+countNintendoDs+countGameBoyAdvance+countGameCube+countPC+countMegaDrive+countPsp+countNintendo3Ds+countMasterSystem;
+  countTotal = countXbox360+countSupernes+countPlaystation1+countPlaystation2+countPlaystation4+countArcade+countAndroid+countXbox+countWii+countNes+countNeoGeo+countNintendo64+countNintendoDs+countGameBoyAdvance+countGameCube+countPC+countMegaDrive+countPsp+countNintendo3Ds+countMasterSystem+countGameBoy;
   $("#total-arcade").html(countArcade);
   $("#total-android").html(countAndroid);
   $("#total-gameboyadvance").html(countGameBoyAdvance);
@@ -172,6 +202,7 @@ $(function() {
   $("#total-psp").html(countPsp);
   $("#total-supernes").html(countSupernes);
   $("#total-mastersystem").html(countMasterSystem);
+  $("#total-gameboy").html(countGameBoy);
   $("#total-completed").html("Total: "+countTotal);
 
   ////GRAPH////////////////////////////////////////////////////////////////////////
@@ -194,7 +225,7 @@ $(function() {
   ////////PLAYSTATION 2
   var c=document.getElementById("graph-play2");
   var ctx=c.getContext("2d");
-  ctx.fillStyle="#00000";
+  ctx.fillStyle="#000000";
   var widthPlay2 = 300*countPlaystation2/countTotal;
   ctx.fillRect(0,0,widthPlay2,200);
   //////////////////////////////////////////////////////////////
@@ -333,6 +364,14 @@ $(function() {
   ctx.fillStyle="rgb(0,128,0)";
   var widthMasterSystem = 300*countMasterSystem/countTotal;
   ctx.fillRect(0,0,widthMasterSystem,200);
+  //////////////////////////////////////////////////////////////
+  
+  ////////Game Boy
+  var c=document.getElementById("graph-gameboy");
+  var ctx=c.getContext("2d");
+  ctx.fillStyle="rgb(10,58,120)";
+  var widthGameBoy = 300*countGameBoy/countTotal;
+  ctx.fillRect(0,0,widthGameBoy,200);
   //////////////////////////////////////////////////////////////
   ///////////////////////////////////////////////////////////////////////////////////
 });

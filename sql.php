@@ -53,18 +53,18 @@
       </section>
 	  
 	  <form action="_php/inject-sql.php" method="post">
-		<textarea rows="10" cols="100" name="sql">UPDATE `games` SET `status`='Completed' WHERE `name`='';</textarea>
+		<textarea rows="10" cols="100" name="sql">DELETE FROM `games` WHERE `name`='';</textarea>
 		<input type="submit" id="botaoSql" value="Inject SQL"/>
 	  </form>
 	  </br></br>
 	  <form action="_php/add.php" method="post">
 		<select id="type" name="type">
-		  <option value="games">games</option>
+		  <option value="games">Game</option>
 		  <option value="Co-op">Co-op</option>
-		  <option value="Movie">Movie</option>
-		  <option value="Serie">Serie</option>
-		  <option value="Book">Book</option>
-		  <option value="DLC">DLC</option>
+		  <option value="movies">Movie</option>
+		  <option value="series">Serie</option>
+		  <option value="books">Book</option>
+		  <option value="dlc">DLC</option>
 		</select>
 		<input type="text" id="nome" name="name"/>
 		<select id="plataforma" name="platform">

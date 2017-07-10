@@ -71,12 +71,11 @@ function makeFilter(option) {
 					$("#total-dlc").html("Total:"+$("#games-dlc-list tr").length);
 				}
 				else {
-					console.log(this.responseText);
 					$("#games-list").append(this.responseText);
 					$("#total").html("Total:"+$("#games-list tr").length);
 				}     
 				covers();
-				updateAll();
+				setMenu();
             }
         };
 		xmlhttp.open("GET", "_php/filter.php?status="+statusGame+"&name="+name+"&genre="+genre+"&plattform="+plattform+"&option="+option, true);
@@ -126,4 +125,28 @@ function covers() {
 	$("a").mouseout(function () {
 		$("img#cover").hide();
 	});
+}
+
+function initialFilter(typeOption) {
+	////Pega os valores
+	$(".games").remove();
+	$(".series").remove();
+	$(".movies").remove();
+	var name = $("#nameFilter").val();
+	var plattform = $("#plataforma").val();
+	var genre = $("#genero").val();
+	var statusGame = $("#status").val();
+
+	//////try to make the request
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			$("#games-list").append(this.responseText);
+			$("#total").html("Total:"+$("#games-list tr").length);
+			setMenu();
+		}
+	};
+	xmlhttp.open("GET", "_php/filter.php?status="+statusGame+"&name="+name+"&genre="+genre+"&plattform="+plattform+"&option="+typeOption, true);
+	xmlhttp.send();
+	///////////////////////////////////
 }

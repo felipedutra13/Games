@@ -8,8 +8,9 @@
   <link rel="shortcut icon" href="_imagens/icone.png"/>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
   <script src="_javascript/funcoes.js"></script>
-  <script src="_javascript/ajax.js"></script>
+  <!--<script src="_javascript/ajax.js"></script>-->
   <script src="_javascript/filtro.js"></script>
+  <script src="_javascript/options.js"></script>
 </head>
 <body>
   <div id="interface">
@@ -18,7 +19,6 @@
       <h2>Track what you're doing!</h2>
 
       <img id="icone" src="_imagens/series.png"/>
-
       <nav id="menu">
         <h1>Main Menu</h1>
         <ul id="menu-principal">
@@ -52,6 +52,33 @@
           </header>
         </article>
       </section>
+	  <ul id="options">
+		<li id="changeName">Change Name</li>
+		<li id="changeGenre">Change Genre <span style="float: right;">&rarr;</span>
+			<ul id="genreOptions">
+				  <li value="Action">Action</li>
+				  <li value="Adventure">Adventure</li>
+				  <li value="Beat 'em up">Beat 'em up</li>
+				  <li value="Fighting">Fighting</li>
+				  <li value="FPS">FPS</li>
+				  <li value="Hack and Slash">Hack and Slash</li>
+				  <li value="Plattform">Plattform</li>
+				  <li value="Puzzle">Puzzle</li>				  				  
+				  <li value="Racing">Racing</li>
+				  <li value="RPG">RPG</li>
+				  <li value="Strategy">Strategy</li>
+				  <li value="Survival Horror">Survival Horror</li>	
+			</ul>
+		</li>
+		<li id="updateStatus">Update Status <span style="float: right;">&rarr;</span>
+			<ul id="statusOptions">
+				  <li value="Backlog">Backlog</li>
+				  <li value="Watched">Watched</li>
+				  <li value="Watching">Watching</li>
+			</ul>
+		</li>
+		<li id="delete">Delete</li>
+	  </ul>
 
       <table id="tabela-series">
         <thead>
@@ -73,24 +100,9 @@
           </tr>
         </thead>
         <tbody id="games-list">
-		  <?php 
-				////Faz a conexão com o banco
-				header("Content-Type: text/html; charset=ISO-8859-1", true);
-				$conecta = mysql_connect("127.0.0.1", "root", "") or print (mysql_error()); 
-				mysql_select_db("games", $conecta) or print(mysql_error()); 
-				///////////////////////////////
-				
-				/////Le as mensagens do banco
-				$sql = "SELECT `name`, `genre`, `status` FROM `series` ORDER BY `name`"; 
-				$result = mysql_query($sql, $conecta); 
-
-				/* Escreve resultados até que não haja mais linhas na tabela */ 
-				 
-				while($consulta = mysql_fetch_array($result)) { 
-				   echo "<tr class='series'><td><a>$consulta[name]</a></td><td>$consulta[genre]</td><td>$consulta[status]</td></tr>";
-				}
-
-			?>
+			<script>
+				initialFilter("series");
+			</script>
         </tbody>
         <tr><td id="total" colspan="4"></td></tr>
       </table>
