@@ -8,7 +8,6 @@
   <link rel="shortcut icon" href="_imagens/icone.png"/>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
   <script src="_javascript/funcoes.js"></script>
-  <script src="_javascript/ajax.js"></script>
   <script src="_javascript/filtro.js"></script>
   <script src="_javascript/options.js"></script>
 </head>
@@ -161,7 +160,7 @@
         </thead>
         <tbody id="games-list">
 			<script>
-				initialFilter("games");				
+				initialFilter("games");
 			</script>
         </tbody>
         <tr><td id="total" colspan="4"></td></tr>
@@ -224,23 +223,9 @@
           </tr>
         </thead>
 	    <tbody id="games-dlc-list">
-		  <?php 
-				////Faz a conexão com o banco
-				$conecta = mysql_connect("127.0.0.1", "root", "") or print (mysql_error()); 
-				mysql_select_db("games", $conecta) or print(mysql_error()); 
-				///////////////////////////////
-				
-				/////Le as mensagens do banco
-				$sql = "SELECT `name`, `plattform`, `genre`, `status` FROM `dlc` ORDER BY `name`"; 
-				$result = mysql_query($sql, $conecta); 
-				
-				///////////////
-				/* Escreve resultados até que não haja mais linhas na tabela */ 
-				 
-				while($consulta = mysql_fetch_array($result)) { 
-				   echo "<tr class='dlc'><td><a href='#'>$consulta[name]</a></td><td>$consulta[plattform]</td><td>$consulta[genre]</td><td>$consulta[status]</td></tr>";
-				}
-			?>
+			<script>
+				initialFilter("dlc");
+			</script>
         </tbody>
 		<tr><td id="total-dlc" colspan="4"></td></tr>
       </table>
@@ -275,7 +260,9 @@
           <tr><td>Xbox</td><td id="total-xbox" class="centro"></td><td><canvas id="graph-xbox"></canvas></td></tr>
           <tr><td>Xbox 360</td><td id="total-xbox360" class="centro"></td><td><canvas id="graph-360"></canvas></td></tr>
         </tbody>
-        <tr><td id="total-completed" colspan="3"></td></tr>
+        <tr><td id="total-games-completed" colspan="3"></td></tr>
+		<tr><td id="total-dlc-completed" colspan="3"></td></tr>
+		<tr><td id="total-completed" colspan="3"></td></tr>
       </table>
       <footer id="rodape">
         <p>Copyright &copy; 2016 - by Felipe Dutra<br/>

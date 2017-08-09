@@ -31,6 +31,7 @@ function setMenu(){
 	
 	$(".series").click(function(e) {
 		name = $("a", this).html();
+		console.log("name: "+name);
 		genre = $("td:nth-child(2)", this).html();
 		statusGame = $("td:nth-child(3)", this).html();
 		typeOption = "series";
@@ -79,7 +80,7 @@ function setMenu(){
 		////change the name
 		$("#changeName").click(function () {
 			$("#options").hide();
-			$("body").append("<div id='confirm'><input id='newName' type='text' placeholder='"+name+"'/><button id='confirmChanging'>Change</button><button class='cancel'>Cancel</button></div>");
+			$("body").append("<div id='confirm'><input id='newName' type='text' value=\""+name+"\"/><button id='confirmChanging'>Change</button><button class='cancel'>Cancel</button></div>");
 			$("#confirm").addClass("confirm");
 			
 			$("#confirmChanging").click(function () {

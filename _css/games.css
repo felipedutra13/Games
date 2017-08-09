@@ -34,7 +34,7 @@ td a:hover {
   text-decoration: none;
 }
 
-td#total, td#total-completed , td#total-dlc{
+td#total, td#total-completed , td#total-dlc, td#total-games-completed, td#total-dlc-completed{
   background: rgb(135,0,0);
   color: white;
   font-weight: bolder;

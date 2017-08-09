@@ -121,66 +121,108 @@ var countPsp = 0;
 var countSupernes = 0;
 var countMasterSystem = 0;
 var countGameBoy = 0;
+var countUnique = 0;
 var countTotal = 0;
+var toCheck = "";
 
 $(function() {
-  /* tentativa de filtrar antes so com os completados */
-  var index = 3;
-  var nth = "#tabela td:nth-child("+(index+1).toString()+")";
-  var valor = "COMPLETED";
-
-  $(nth).each(function(){
-    if($(this).text().toUpperCase().indexOf(valor) < 0){
-      $(this).parent().hide();
-    }
+  $('#tabela .games').each(function() {
+	  if($("td:nth-child(4)", this).text() == "Completed"){
+		var toCheck = $("td:nth-child(2)", this).text();
+		if(toCheck == "Xbox 360")
+		countXbox360++;
+		else if(toCheck == "Playstation")
+		countPlaystation1++;
+		else if(toCheck == "Playstation 2")
+		countPlaystation2++;
+		else if(toCheck == "Playstation 4")
+		countPlaystation4++;
+		else if(toCheck == "Super Nintendo")
+		countSupernes++;
+		else if(toCheck == "Arcade")
+		countArcade++;
+		else if(toCheck == "Game Boy Advance")
+		countGameBoyAdvance++;
+		else if(toCheck == "GameCube")
+		countGameCube++;
+		else if(toCheck == "Mega Drive")
+		countMegaDrive++;
+		else if(toCheck == "Neo Geo")
+		countNeoGeo++;
+		else if(toCheck == "Nintendinho")
+		countNes++;
+		else if(toCheck == "Nintendo 64")
+		countNintendo64++;
+		else if(toCheck == "Nintendo DS")
+		countNintendoDs++;
+		else if(toCheck == "PC")
+		countPC++;
+		else if(toCheck == "Wii")
+		countWii++;
+		else if(toCheck == "Xbox")
+		countXbox++;
+		else if(toCheck == "Android")
+		countAndroid++;
+		else if(toCheck == "Nintendo 3DS")
+		countNintendo3Ds++;
+		else if(toCheck == "PSP")
+		countPsp++;
+		else if(toCheck == "Master System")
+		countMasterSystem++;
+		else if(toCheck == "Game Boy")
+		countGameBoy++;
+	  }
+	  countUnique = countXbox360+countSupernes+countPlaystation1+countPlaystation2+countPlaystation4+countArcade+countAndroid+countXbox+countWii+countNes+countNeoGeo+countNintendo64+countNintendoDs+countGameBoyAdvance+countGameCube+countPC+countMegaDrive+countPsp+countNintendo3Ds+countMasterSystem+countGameBoy;
   });
 
-
-  $('#tabela td:visible').each(function() {
-    if($(this).text() == "Xbox 360")
-    countXbox360++;
-    else if($(this).text() == "Playstation")
-    countPlaystation1++;
-    else if($(this).text() == "Playstation 2")
-    countPlaystation2++;
-    else if($(this).text() == "Playstation 4")
-    countPlaystation4++;
-    else if($(this).text() == "Super Nintendo")
-    countSupernes++;
-    else if($(this).text() == "Arcade")
-    countArcade++;
-    else if($(this).text() == "Game Boy Advance")
-    countGameBoyAdvance++;
-    else if($(this).text() == "GameCube")
-    countGameCube++;
-    else if($(this).text() == "Mega Drive")
-    countMegaDrive++;
-    else if($(this).text() == "Neo Geo")
-    countNeoGeo++;
-    else if($(this).text() == "Nintendinho")
-    countNes++;
-    else if($(this).text() == "Nintendo 64")
-    countNintendo64++;
-    else if($(this).text() == "Nintendo DS")
-    countNintendoDs++;
-    else if($(this).text() == "PC")
-    countPC++;
-    else if($(this).text() == "Wii")
-    countWii++;
-    else if($(this).text() == "Xbox")
-    countXbox++;
-    else if($(this).text() == "Android")
-    countAndroid++;
-    else if($(this).text() == "Nintendo 3DS")
-    countNintendo3Ds++;
-	else if($(this).text() == "PSP")
-    countPsp++;
-	else if($(this).text() == "Master System")
-    countMasterSystem++;
-	else if($(this).text() == "Game Boy")
-    countGameBoy++;
+  $('#tabela-dlc .dlc').each(function() {
+	  if($("td:nth-child(4)", this).text() == "Completed"){
+		toCheck = $("td:nth-child(2)", this).text();
+		if(toCheck == "Xbox 360")
+		countXbox360++;
+		else if(toCheck == "Playstation")
+		countPlaystation1++;
+		else if(toCheck == "Playstation 2")
+		countPlaystation2++;
+		else if(toCheck == "Playstation 4")
+		countPlaystation4++;
+		else if(toCheck == "Super Nintendo")
+		countSupernes++;
+		else if(toCheck == "Arcade")
+		countArcade++;
+		else if(toCheck == "Game Boy Advance")
+		countGameBoyAdvance++;
+		else if(toCheck == "GameCube")
+		countGameCube++;
+		else if(toCheck == "Mega Drive")
+		countMegaDrive++;
+		else if(toCheck == "Neo Geo")
+		countNeoGeo++;
+		else if(toCheck == "Nintendinho")
+		countNes++;
+		else if(toCheck == "Nintendo 64")
+		countNintendo64++;
+		else if(toCheck == "Nintendo DS")
+		countNintendoDs++;
+		else if(toCheck == "PC")
+		countPC++;
+		else if(toCheck == "Wii")
+		countWii++;
+		else if(toCheck == "Xbox")
+		countXbox++;
+		else if(toCheck == "Android")
+		countAndroid++;
+		else if(toCheck == "Nintendo 3DS")
+		countNintendo3Ds++;
+		else if(toCheck == "PSP")
+		countPsp++;
+		else if(toCheck == "Master System")
+		countMasterSystem++;
+		else if(toCheck == "Game Boy")
+		countGameBoy++;
+	  }
   });
-  $("#tabela tbody tr").show();
+  
   countTotal = countXbox360+countSupernes+countPlaystation1+countPlaystation2+countPlaystation4+countArcade+countAndroid+countXbox+countWii+countNes+countNeoGeo+countNintendo64+countNintendoDs+countGameBoyAdvance+countGameCube+countPC+countMegaDrive+countPsp+countNintendo3Ds+countMasterSystem+countGameBoy;
   $("#total-arcade").html(countArcade);
   $("#total-android").html(countAndroid);
@@ -203,6 +245,8 @@ $(function() {
   $("#total-supernes").html(countSupernes);
   $("#total-mastersystem").html(countMasterSystem);
   $("#total-gameboy").html(countGameBoy);
+  $("#total-games-completed").html("Total: "+countUnique);
+  $("#total-dlc-completed").html("Total: "+(countTotal-countUnique));
   $("#total-completed").html("Total: "+countTotal);
 
   ////GRAPH////////////////////////////////////////////////////////////////////////
