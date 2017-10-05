@@ -123,299 +123,242 @@ var countMasterSystem = 0;
 var countGameBoy = 0;
 var countUnique = 0;
 var countTotal = 0;
-var toCheck = "";
+var countDlc = 0;
 
 $(function() {
-  $('#tabela .games').each(function() {
-	  if($("td:nth-child(4)", this).text() == "Completed"){
-		var toCheck = $("td:nth-child(2)", this).text();
-		if(toCheck == "Xbox 360")
-		countXbox360++;
-		else if(toCheck == "Playstation")
-		countPlaystation1++;
-		else if(toCheck == "Playstation 2")
-		countPlaystation2++;
-		else if(toCheck == "Playstation 4")
-		countPlaystation4++;
-		else if(toCheck == "Super Nintendo")
-		countSupernes++;
-		else if(toCheck == "Arcade")
-		countArcade++;
-		else if(toCheck == "Game Boy Advance")
-		countGameBoyAdvance++;
-		else if(toCheck == "GameCube")
-		countGameCube++;
-		else if(toCheck == "Mega Drive")
-		countMegaDrive++;
-		else if(toCheck == "Neo Geo")
-		countNeoGeo++;
-		else if(toCheck == "Nintendinho")
-		countNes++;
-		else if(toCheck == "Nintendo 64")
-		countNintendo64++;
-		else if(toCheck == "Nintendo DS")
-		countNintendoDs++;
-		else if(toCheck == "PC")
-		countPC++;
-		else if(toCheck == "Wii")
-		countWii++;
-		else if(toCheck == "Xbox")
-		countXbox++;
-		else if(toCheck == "Android")
-		countAndroid++;
-		else if(toCheck == "Nintendo 3DS")
-		countNintendo3Ds++;
-		else if(toCheck == "PSP")
-		countPsp++;
-		else if(toCheck == "Master System")
-		countMasterSystem++;
-		else if(toCheck == "Game Boy")
-		countGameBoy++;
-	  }
-	  countUnique = countXbox360+countSupernes+countPlaystation1+countPlaystation2+countPlaystation4+countArcade+countAndroid+countXbox+countWii+countNes+countNeoGeo+countNintendo64+countNintendoDs+countGameBoyAdvance+countGameCube+countPC+countMegaDrive+countPsp+countNintendo3Ds+countMasterSystem+countGameBoy;
-  });
+		//////try to make the request
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			var result = this.responseText;
+			var tmp = result.split("_");
+			countDlc = tmp[1];
+			var qnt = tmp[0].split("|");
+				countAndroid = Number(qnt[0]);
+				countArcade = Number(qnt[1]);
+				countGameBoy = Number(qnt[2]);
+				countGameBoyAdvance = Number(qnt[3]);
+				countGameCube = Number(qnt[4]);
+				countMasterSystem = Number(qnt[5]);
+				countMegaDrive = Number(qnt[6]);
+				countNeoGeo = Number(qnt[7]);
+				countNes = Number(qnt[8]);
+				countNintendo3Ds = Number(qnt[9]);
+				countNintendo64 = Number(qnt[10]);
+				countNintendoDs = Number(qnt[11]);
+				countPC = Number(qnt[12]);
+				countPlaystation1 = Number(qnt[13]);
+				countPlaystation2 = Number(qnt[14]);
+				countPlaystation4 = Number(qnt[15]);
+				countPsp = Number(qnt[16]);
+				countSupernes = Number(qnt[17]);
+				countWii = Number(qnt[18]);
+				countXbox = Number(qnt[19]);
+				countXbox360 = Number(qnt[20]);		
+				countTotal = countXbox360+countSupernes+countPlaystation1+countPlaystation2+countPlaystation4+countArcade+countAndroid+countXbox+countWii+countNes+countNeoGeo+countNintendo64+countNintendoDs+countGameBoyAdvance+countGameCube+countPC+countMegaDrive+countPsp+countNintendo3Ds+countMasterSystem+countGameBoy;
+				  $("#total-arcade").html(countArcade);
+				  $("#total-android").html(countAndroid);
+				  $("#total-gameboyadvance").html(countGameBoyAdvance);
+				  $("#total-gamecube").html(countGameCube);
+				  $("#total-megadrive").html(countMegaDrive);
+				  $("#total-neogeo").html(countNeoGeo);
+				  $("#total-nes").html(countNes);
+				  $("#total-nintendo64").html(countNintendo64);
+				  $("#total-nintendods").html(countNintendoDs);
+				  $("#total-nintendo3ds").html(countNintendo3Ds);
+				  $("#total-pc").html(countPC);
+				  $("#total-wii").html(countWii);
+				  $("#total-xbox").html(countXbox);
+				  $("#total-xbox360").html(countXbox360);
+				  $("#total-playstation1").html(countPlaystation1);
+				  $("#total-playstation2").html(countPlaystation2);
+				  $("#total-playstation4").html(countPlaystation4);
+				  $("#total-psp").html(countPsp);
+				  $("#total-supernes").html(countSupernes);
+				  $("#total-mastersystem").html(countMasterSystem);
+				  $("#total-gameboy").html(countGameBoy);
+				  $("#total-games-completed").html("Games: "+(countTotal-countDlc));
+				  $("#total-dlc-completed").html("DLCs/Expansions: "+(countDlc));
+				  $("#total-completed").html("Total: "+countTotal);
 
-  $('#tabela-dlc .dlc').each(function() {
-	  if($("td:nth-child(4)", this).text() == "Completed"){
-		toCheck = $("td:nth-child(2)", this).text();
-		if(toCheck == "Xbox 360")
-		countXbox360++;
-		else if(toCheck == "Playstation")
-		countPlaystation1++;
-		else if(toCheck == "Playstation 2")
-		countPlaystation2++;
-		else if(toCheck == "Playstation 4")
-		countPlaystation4++;
-		else if(toCheck == "Super Nintendo")
-		countSupernes++;
-		else if(toCheck == "Arcade")
-		countArcade++;
-		else if(toCheck == "Game Boy Advance")
-		countGameBoyAdvance++;
-		else if(toCheck == "GameCube")
-		countGameCube++;
-		else if(toCheck == "Mega Drive")
-		countMegaDrive++;
-		else if(toCheck == "Neo Geo")
-		countNeoGeo++;
-		else if(toCheck == "Nintendinho")
-		countNes++;
-		else if(toCheck == "Nintendo 64")
-		countNintendo64++;
-		else if(toCheck == "Nintendo DS")
-		countNintendoDs++;
-		else if(toCheck == "PC")
-		countPC++;
-		else if(toCheck == "Wii")
-		countWii++;
-		else if(toCheck == "Xbox")
-		countXbox++;
-		else if(toCheck == "Android")
-		countAndroid++;
-		else if(toCheck == "Nintendo 3DS")
-		countNintendo3Ds++;
-		else if(toCheck == "PSP")
-		countPsp++;
-		else if(toCheck == "Master System")
-		countMasterSystem++;
-		else if(toCheck == "Game Boy")
-		countGameBoy++;
-	  }
-  });
+				  ////GRAPH////////////////////////////////////////////////////////////////////////
+				  ////////XBOX 360
+				  var c=document.getElementById("graph-360");
+				  var ctx=c.getContext("2d");
+				  ctx.fillStyle="rgb(0,255,0)";
+				  var width360 = 300*countXbox360/countTotal;
+				  ctx.fillRect(0,0,width360,200);
+				  //////////////////////////////////////////////////////////
+
+				  ////////PLAYSTATION 1
+				  var c=document.getElementById("graph-play1");
+				  var ctx=c.getContext("2d");
+				  ctx.fillStyle="rgb(105,105,105)";
+				  var widthPlay1 = 300*countPlaystation1/countTotal;
+				  ctx.fillRect(0,0,widthPlay1,200);
+				  //////////////////////////////////////////////////////////////
+
+				  ////////PLAYSTATION 2
+				  var c=document.getElementById("graph-play2");
+				  var ctx=c.getContext("2d");
+				  ctx.fillStyle="#000000";
+				  var widthPlay2 = 300*countPlaystation2/countTotal;
+				  ctx.fillRect(0,0,widthPlay2,200);
+				  //////////////////////////////////////////////////////////////
+
+				  ////////PLAYSTATION 4
+				  var c=document.getElementById("graph-play4");
+				  var ctx=c.getContext("2d");
+				  ctx.fillStyle="rgb(0,0,205)";
+				  var widthPlay4 = 300*countPlaystation4/countTotal;
+				  ctx.fillRect(0,0,widthPlay4,200);
+				  //////////////////////////////////////////////////////////////
+				  
+				  ////////PSP
+				  var c=document.getElementById("graph-psp");
+				  var ctx=c.getContext("2d");
+				  ctx.fillStyle="rgb(0,0,205)";
+				  var widthPsp = 300*countPsp/countTotal;
+				  ctx.fillRect(0,0,widthPsp,200);
+				  //////////////////////////////////////////////////////////////
+
+				  ////////Super Nintendo
+				  var c=document.getElementById("graph-supernes");
+				  var ctx=c.getContext("2d");
+				  ctx.fillStyle="rgb(138,43,226)";
+				  var widthSupernes = 300*countSupernes/countTotal;
+				  ctx.fillRect(0,0,widthSupernes,200);
+				  //////////////////////////////////////////////////////////////
+
+				  ////////Arcade
+				  var c=document.getElementById("graph-arcade");
+				  var ctx=c.getContext("2d");
+				  ctx.fillStyle="rgb(70,130,180)";
+				  var widthArcade = 300*countArcade/countTotal;
+				  ctx.fillRect(0,0,widthArcade,200);
+				  //////////////////////////////////////////////////////////////
+
+				  ////////Android
+				  var c=document.getElementById("graph-android");
+				  var ctx=c.getContext("2d");
+				  ctx.fillStyle="rgb(124,252,0)";
+				  var widthAndroid = 300*countAndroid/countTotal;
+				  ctx.fillRect(0,0,widthAndroid,200);
+				  //////////////////////////////////////////////////////////////
+
+				  ////////Game Boy Advance
+				  var c=document.getElementById("graph-gameboyadvance");
+				  var ctx=c.getContext("2d");
+				  ctx.fillStyle="rgb(128,0,128)";
+				  var widthGameBoyAdvance = 300*countGameBoyAdvance/countTotal;
+				  ctx.fillRect(0,0,widthGameBoyAdvance,200);
+				  //////////////////////////////////////////////////////////////
+
+				  ////////GameCube
+				  var c=document.getElementById("graph-gamecube");
+				  var ctx=c.getContext("2d");
+				  ctx.fillStyle="rgb(0,255,255)";
+				  var widthGameCube = 300*countGameCube/countTotal;
+				  ctx.fillRect(0,0,widthGameCube,200);
+				  //////////////////////////////////////////////////////////////
+
+				  ////////Mega Drive
+				  var c=document.getElementById("graph-megadrive");
+				  var ctx=c.getContext("2d");
+				  ctx.fillStyle="rgb(128,0,0)";
+				  var widthMegaDrive = 300*countMegaDrive/countTotal;
+				  ctx.fillRect(0,0,widthMegaDrive,200);
+				  //////////////////////////////////////////////////////////////
+
+				  ////////NeoGeo
+				  var c=document.getElementById("graph-neogeo");
+				  var ctx=c.getContext("2d");
+				  ctx.fillStyle="rgb(255,0,255)";
+				  var widthNeoGeo = 300*countNeoGeo/countTotal;
+				  ctx.fillRect(0,0,widthNeoGeo,200);
+				  //////////////////////////////////////////////////////////////
+
+				  ////////Nintendinho
+				  var c=document.getElementById("graph-nes");
+				  var ctx=c.getContext("2d");
+				  ctx.fillStyle="rgb(255,0,0)";
+				  var widthNes = 300*countNes/countTotal;
+				  ctx.fillRect(0,0,widthNes,200);
+				  //////////////////////////////////////////////////////////////
+
+				  ////////Nintendo 64
+				  var c=document.getElementById("graph-nintendo64");
+				  var ctx=c.getContext("2d");
+				  ctx.fillStyle="rgb(255,127,80)";
+				  var widthNintendo64 = 300*countNintendo64/countTotal;
+				  ctx.fillRect(0,0,widthNintendo64,200);
+				  //////////////////////////////////////////////////////////////
+
+				  ////////Nintendo DS
+				  var c=document.getElementById("graph-nintendods");
+				  var ctx=c.getContext("2d");
+				  ctx.fillStyle="rgb(255,165,0)";
+				  var widthNintendoDs = 300*countNintendoDs/countTotal;
+				  ctx.fillRect(0,0,widthNintendoDs,200);
+				  //////////////////////////////////////////////////////////////
+				 
+				  ////////Nintendo 3DS
+				  var c=document.getElementById("graph-nintendo3ds");
+				  var ctx=c.getContext("2d");
+				  ctx.fillStyle="rgb(255,165,255)";
+				  var widthNintendo3Ds = 300*countNintendo3Ds/countTotal;
+				  ctx.fillRect(0,0,widthNintendo3Ds,200);
+				  //////////////////////////////////////////////////////////////
+
+				  ////////PC
+				  var c=document.getElementById("graph-pc");
+				  var ctx=c.getContext("2d");
+				  ctx.fillStyle="rgb(255,215,0)";
+				  var widthPC = 300*countPC/countTotal;
+				  ctx.fillRect(0,0,widthPC,200);
+				  //////////////////////////////////////////////////////////////
+
+				  ////////Wii
+				  var c=document.getElementById("graph-wii");
+				  var ctx=c.getContext("2d");
+				  ctx.fillStyle="rgb(0,191,255)";
+				  var widthWii = 300*countWii/countTotal;
+				  ctx.fillRect(0,0,widthWii,200);
+				  //////////////////////////////////////////////////////////////
+
+				  ////////Xbox
+				  var c=document.getElementById("graph-xbox");
+				  var ctx=c.getContext("2d");
+				  ctx.fillStyle="rgb(0,128,0)";
+				  var widthXbox = 300*countXbox/countTotal;
+				  ctx.fillRect(0,0,widthXbox,200);
+				  //////////////////////////////////////////////////////////////
+				  
+				  ////////Master System
+				  var c=document.getElementById("graph-mastersystem");
+				  var ctx=c.getContext("2d");
+				  ctx.fillStyle="rgb(0,128,0)";
+				  var widthMasterSystem = 300*countMasterSystem/countTotal;
+				  ctx.fillRect(0,0,widthMasterSystem,200);
+				  //////////////////////////////////////////////////////////////
+				  
+				  ////////Game Boy
+				  var c=document.getElementById("graph-gameboy");
+				  var ctx=c.getContext("2d");
+				  ctx.fillStyle="rgb(10,58,120)";
+				  var widthGameBoy = 300*countGameBoy/countTotal;
+				  ctx.fillRect(0,0,widthGameBoy,200);
+				  //////////////////////////////////////////////////////////////
+				  ///////////////////////////////////////////////////////////////////////////////////
+		}
+	};
+	xmlhttp.open("GET", "_php/count.php", true);
+	xmlhttp.send();
+	///////////////////////////////////
+
+
   
-  countTotal = countXbox360+countSupernes+countPlaystation1+countPlaystation2+countPlaystation4+countArcade+countAndroid+countXbox+countWii+countNes+countNeoGeo+countNintendo64+countNintendoDs+countGameBoyAdvance+countGameCube+countPC+countMegaDrive+countPsp+countNintendo3Ds+countMasterSystem+countGameBoy;
-  $("#total-arcade").html(countArcade);
-  $("#total-android").html(countAndroid);
-  $("#total-gameboyadvance").html(countGameBoyAdvance);
-  $("#total-gamecube").html(countGameCube);
-  $("#total-megadrive").html(countMegaDrive);
-  $("#total-neogeo").html(countNeoGeo);
-  $("#total-nes").html(countNes);
-  $("#total-nintendo64").html(countNintendo64);
-  $("#total-nintendods").html(countNintendoDs);
-  $("#total-nintendo3ds").html(countNintendo3Ds);
-  $("#total-pc").html(countPC);
-  $("#total-wii").html(countWii);
-  $("#total-xbox").html(countXbox);
-  $("#total-xbox360").html(countXbox360);
-  $("#total-playstation1").html(countPlaystation1);
-  $("#total-playstation2").html(countPlaystation2);
-  $("#total-playstation4").html(countPlaystation4);
-  $("#total-psp").html(countPsp);
-  $("#total-supernes").html(countSupernes);
-  $("#total-mastersystem").html(countMasterSystem);
-  $("#total-gameboy").html(countGameBoy);
-  $("#total-games-completed").html("Total: "+countUnique);
-  $("#total-dlc-completed").html("Total: "+(countTotal-countUnique));
-  $("#total-completed").html("Total: "+countTotal);
-
-  ////GRAPH////////////////////////////////////////////////////////////////////////
-  ////////XBOX 360
-  var c=document.getElementById("graph-360");
-  var ctx=c.getContext("2d");
-  ctx.fillStyle="rgb(0,255,0)";
-  var width360 = 300*countXbox360/countTotal;
-  ctx.fillRect(0,0,width360,200);
-  //////////////////////////////////////////////////////////
-
-  ////////PLAYSTATION 1
-  var c=document.getElementById("graph-play1");
-  var ctx=c.getContext("2d");
-  ctx.fillStyle="rgb(105,105,105)";
-  var widthPlay1 = 300*countPlaystation1/countTotal;
-  ctx.fillRect(0,0,widthPlay1,200);
-  //////////////////////////////////////////////////////////////
-
-  ////////PLAYSTATION 2
-  var c=document.getElementById("graph-play2");
-  var ctx=c.getContext("2d");
-  ctx.fillStyle="#000000";
-  var widthPlay2 = 300*countPlaystation2/countTotal;
-  ctx.fillRect(0,0,widthPlay2,200);
-  //////////////////////////////////////////////////////////////
-
-  ////////PLAYSTATION 4
-  var c=document.getElementById("graph-play4");
-  var ctx=c.getContext("2d");
-  ctx.fillStyle="rgb(0,0,205)";
-  var widthPlay4 = 300*countPlaystation4/countTotal;
-  ctx.fillRect(0,0,widthPlay4,200);
-  //////////////////////////////////////////////////////////////
   
-  ////////PSP
-  var c=document.getElementById("graph-psp");
-  var ctx=c.getContext("2d");
-  ctx.fillStyle="rgb(0,0,205)";
-  var widthPsp = 300*countPsp/countTotal;
-  ctx.fillRect(0,0,widthPsp,200);
-  //////////////////////////////////////////////////////////////
 
-  ////////Super Nintendo
-  var c=document.getElementById("graph-supernes");
-  var ctx=c.getContext("2d");
-  ctx.fillStyle="rgb(138,43,226)";
-  var widthSupernes = 300*countSupernes/countTotal;
-  ctx.fillRect(0,0,widthSupernes,200);
-  //////////////////////////////////////////////////////////////
-
-  ////////Arcade
-  var c=document.getElementById("graph-arcade");
-  var ctx=c.getContext("2d");
-  ctx.fillStyle="rgb(70,130,180)";
-  var widthArcade = 300*countArcade/countTotal;
-  ctx.fillRect(0,0,widthArcade,200);
-  //////////////////////////////////////////////////////////////
-
-  ////////Android
-  var c=document.getElementById("graph-android");
-  var ctx=c.getContext("2d");
-  ctx.fillStyle="rgb(124,252,0)";
-  var widthAndroid = 300*countAndroid/countTotal;
-  ctx.fillRect(0,0,widthAndroid,200);
-  //////////////////////////////////////////////////////////////
-
-  ////////Game Boy Advance
-  var c=document.getElementById("graph-gameboyadvance");
-  var ctx=c.getContext("2d");
-  ctx.fillStyle="rgb(128,0,128)";
-  var widthGameBoyAdvance = 300*countGameBoyAdvance/countTotal;
-  ctx.fillRect(0,0,widthGameBoyAdvance,200);
-  //////////////////////////////////////////////////////////////
-
-  ////////GameCube
-  var c=document.getElementById("graph-gamecube");
-  var ctx=c.getContext("2d");
-  ctx.fillStyle="rgb(0,255,255)";
-  var widthGameCube = 300*countGameCube/countTotal;
-  ctx.fillRect(0,0,widthGameCube,200);
-  //////////////////////////////////////////////////////////////
-
-  ////////Mega Drive
-  var c=document.getElementById("graph-megadrive");
-  var ctx=c.getContext("2d");
-  ctx.fillStyle="rgb(128,0,0)";
-  var widthMegaDrive = 300*countMegaDrive/countTotal;
-  ctx.fillRect(0,0,widthMegaDrive,200);
-  //////////////////////////////////////////////////////////////
-
-  ////////NeoGeo
-  var c=document.getElementById("graph-neogeo");
-  var ctx=c.getContext("2d");
-  ctx.fillStyle="rgb(255,0,255)";
-  var widthNeoGeo = 300*countNeoGeo/countTotal;
-  ctx.fillRect(0,0,widthNeoGeo,200);
-  //////////////////////////////////////////////////////////////
-
-  ////////Nintendinho
-  var c=document.getElementById("graph-nes");
-  var ctx=c.getContext("2d");
-  ctx.fillStyle="rgb(255,0,0)";
-  var widthNes = 300*countNes/countTotal;
-  ctx.fillRect(0,0,widthNes,200);
-  //////////////////////////////////////////////////////////////
-
-  ////////Nintendo 64
-  var c=document.getElementById("graph-nintendo64");
-  var ctx=c.getContext("2d");
-  ctx.fillStyle="rgb(255,127,80)";
-  var widthNintendo64 = 300*countNintendo64/countTotal;
-  ctx.fillRect(0,0,widthNintendo64,200);
-  //////////////////////////////////////////////////////////////
-
-  ////////Nintendo DS
-  var c=document.getElementById("graph-nintendods");
-  var ctx=c.getContext("2d");
-  ctx.fillStyle="rgb(255,165,0)";
-  var widthNintendoDs = 300*countNintendoDs/countTotal;
-  ctx.fillRect(0,0,widthNintendoDs,200);
-  //////////////////////////////////////////////////////////////
- 
-  ////////Nintendo 3DS
-  var c=document.getElementById("graph-nintendo3ds");
-  var ctx=c.getContext("2d");
-  ctx.fillStyle="rgb(255,165,255)";
-  var widthNintendo3Ds = 300*countNintendo3Ds/countTotal;
-  ctx.fillRect(0,0,widthNintendo3Ds,200);
-  //////////////////////////////////////////////////////////////
-
-  ////////PC
-  var c=document.getElementById("graph-pc");
-  var ctx=c.getContext("2d");
-  ctx.fillStyle="rgb(255,215,0)";
-  var widthPC = 300*countPC/countTotal;
-  ctx.fillRect(0,0,widthPC,200);
-  //////////////////////////////////////////////////////////////
-
-  ////////Wii
-  var c=document.getElementById("graph-wii");
-  var ctx=c.getContext("2d");
-  ctx.fillStyle="rgb(0,191,255)";
-  var widthWii = 300*countWii/countTotal;
-  ctx.fillRect(0,0,widthWii,200);
-  //////////////////////////////////////////////////////////////
-
-  ////////Xbox
-  var c=document.getElementById("graph-xbox");
-  var ctx=c.getContext("2d");
-  ctx.fillStyle="rgb(0,128,0)";
-  var widthXbox = 300*countXbox/countTotal;
-  ctx.fillRect(0,0,widthXbox,200);
-  //////////////////////////////////////////////////////////////
   
-  ////////Master System
-  var c=document.getElementById("graph-mastersystem");
-  var ctx=c.getContext("2d");
-  ctx.fillStyle="rgb(0,128,0)";
-  var widthMasterSystem = 300*countMasterSystem/countTotal;
-  ctx.fillRect(0,0,widthMasterSystem,200);
-  //////////////////////////////////////////////////////////////
-  
-  ////////Game Boy
-  var c=document.getElementById("graph-gameboy");
-  var ctx=c.getContext("2d");
-  ctx.fillStyle="rgb(10,58,120)";
-  var widthGameBoy = 300*countGameBoy/countTotal;
-  ctx.fillRect(0,0,widthGameBoy,200);
-  //////////////////////////////////////////////////////////////
-  ///////////////////////////////////////////////////////////////////////////////////
 });

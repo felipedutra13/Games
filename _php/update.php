@@ -12,7 +12,6 @@
 	$newGenre = isset($_GET["newGenre"])? str_replace("'", "''", $_GET["newGenre"]) : "";
 	$option = $_GET["option"];
 	$type = $_GET["type"];
-	
 	if($option == "delete")
 		$query = "DELETE FROM `$type` WHERE `name`='$name' AND `plattform` like ('$platform');";
 	elseif ($option == "changeName")

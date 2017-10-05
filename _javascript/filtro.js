@@ -129,14 +129,20 @@ function covers() {
 
 function initialFilter(typeOption) {
 	////Pega os valores
-	$(".games").remove();
-	$(".series").remove();
-	$(".movies").remove();
-	$(".dlc").remove();
-	var name = $("#nameFilter").val();
-	var plattform = $("#plataforma").val();
-	var genre = $("#genero").val();
-	var statusGame = $("#status").val();
+	$("."+typeOption).remove();
+	if(typeOption != "dlc"){
+		var name = $("#nameFilter").val();
+		var plattform = $("#plataforma").val();
+		var genre = $("#genero").val();
+		var statusGame = $("#status").val();
+	}
+	else {
+		var name = $("#nameFilterDlc").val();
+		var plattform = $("#plataformaDlc").val();
+		var genre = $("#generoDlc").val();
+		var statusGame = $("#statusDlc").val();
+	}
+
 	
 	//////try to make the request
 	var xmlhttp = new XMLHttpRequest();
@@ -145,13 +151,12 @@ function initialFilter(typeOption) {
 			if(typeOption != "dlc"){
 				$("#games-list").append(this.responseText);
 				$("#total").html("Total:"+$("#games-list tr").length);
+				setMenu();
 			}
 			else {
 				$("#games-dlc-list").append(this.responseText);
 				$("#total-dlc").html("Total:"+$("#games-dlc-list tr").length);
 			}
-			setMenu();
-			//drawGraph(typeOption);
 		}
 	};
 	xmlhttp.open("GET", "_php/filter.php?status="+statusGame+"&name="+name+"&genre="+genre+"&plattform="+plattform+"&option="+typeOption, true);

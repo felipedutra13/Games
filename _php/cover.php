@@ -10,10 +10,11 @@
 			
 	$query = "SELECT `image` FROM `$option` WHERE `name`='$name';";
 	////executa a query no banco
-	$result = mysql_query($query, $conecta); 
-	while($consulta = mysql_fetch_array($result)) { 
-		echo "$consulta[image]";
-	}
+	$result = mysql_query($query, $conecta);
+	if($result != false)
+		while($consulta = mysql_fetch_array($result)) { 
+			echo "$consulta[image]";
+		}
 	/////fecha a conexão
 	mysql_close($conecta); 
 	

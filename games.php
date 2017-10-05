@@ -63,7 +63,7 @@
 				  <li value="GameCube">GameCube</li>
 				  <li value="Master System">Master System</li>
 				  <li value="Mega Drive">Mega Drive</li>
-				  <li value="NeoGeo">NeoGeo</li>
+				  <li value="Neo Geo">Neo Geo</li>
 				  <li value="Nintendinho">Nintendinho</li>
 				  <li value="Nintendo 64">Nintendo 64</li>
 				  <li value="Nintendo DS">Nintendo DS</li>
@@ -120,7 +120,7 @@
 				  <option value="GameCube">GameCube</option>
 				  <option value="Master System">Master System</option>
 				  <option value="Mega Drive">Mega Drive</option>
-				  <option value="NeoGeo">NeoGeo</option>
+				  <option value="Neo Geo">Neo Geo</option>
 				  <option value="Nintendinho">Nintendinho</option>
 				  <option value="Nintendo 64">Nintendo 64</option>
 				  <option value="Nintendo DS">Nintendo DS</option>

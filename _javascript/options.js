@@ -7,7 +7,6 @@ $(function() {
 	$("#platformOptions").hide();
 	$("#genreOptions").hide();
 	$("#statusOptions").hide();
-	setMenu();
 });
 
 var name = "";
@@ -24,6 +23,17 @@ function setMenu(){
 		genre = $("td:nth-child(3)", this).html();
 		statusGame = $("td:nth-child(4)", this).html();
 		typeOption = "games";
+		$("#options").show();
+		$("#options").css("top", e.pageY);
+		$("#options").css("left", e.pageX);
+	});
+	
+	$(".dlc").click(function(e) {
+		name = $("a", this).html();
+		plattform = $("td:nth-child(2)", this).html();
+		genre = $("td:nth-child(3)", this).html();
+		statusGame = $("td:nth-child(4)", this).html();
+		typeOption = "dlc";
 		$("#options").show();
 		$("#options").css("top", e.pageY);
 		$("#options").css("left", e.pageX);
@@ -64,7 +74,6 @@ function setMenu(){
 						count++;
 						$("#confirm").remove();
 						initialFilter(typeOption);
-						$("#teste").text(this.responseText);
 					}
 				};
 				count = 0;
