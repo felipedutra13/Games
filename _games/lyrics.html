@@ -32,9 +32,7 @@
 					words = lyrics.split(/[\s,?]+/);
 					$("#lyrics").val("");
 					
-				});
-				
-				$("#check").click(function () {
+									$("#lyrics").keyup(function () {
 					$("#hide").prop("disabled",true);
 					var countCorrects = 0;
 					var written = ($("#lyrics").val()).split(/[\s,]+/);
@@ -56,6 +54,10 @@
 					if(countCorrects == words.length)
 						alert("Congratulations");
 				});
+					
+				});
+				
+
 			});
 		</script>
 	</head>
