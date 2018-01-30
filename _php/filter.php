@@ -1,7 +1,7 @@
 <?php
 	////Faz a conexão com o banco
-	$conecta = mysql_connect("127.0.0.1", "root", "") or print (mysql_error()); 
-	mysql_select_db("games", $conecta) or print(mysql_error()); 
+	$conecta = mysqli_connect("127.0.0.1", "root", "") or print (mysqli_error()); 
+	mysqli_select_db($conecta, "games") or print(mysqli_error()); 
 	///////////////////////////////
 	
 	////Pega os dados do formulário
@@ -25,20 +25,20 @@
 		$query = "SELECT * FROM `$option` WHERE `name` like ('$newName') AND `genre` like ('$genre') AND `plattform` like ('$plattform') AND `status` like ('$status') ORDER BY `name`;";
 		//echo $query;
 		////executa a query no banco
-		$result = mysql_query($query, $conecta); 
-		while($consulta = mysql_fetch_array($result)) {
+		$result = mysqli_query($conecta, $query); 
+		while($consulta = mysqli_fetch_array($result)) {
 			echo "<tr class='$option'><td><a>$consulta[name]</a></td><td>$consulta[plattform]</td><td>$consulta[genre]</td><td>$consulta[status]</td></tr>";
 		}
 	}
 	else {
 		$query = "SELECT * FROM `$option` WHERE `name` like ('$newName') AND `genre` like ('$genre') AND `status` like ('$status') ORDER BY `name`;";
 		////executa a query no banco
-		$result = mysql_query($query, $conecta); 
-		while($consulta = mysql_fetch_array($result)) { 
+		$result = mysqli_query($conecta, $query); 
+		while($consulta = mysqli_fetch_array($result)) { 
 			echo "<tr class='$option'><td><a>$consulta[name]</a></td><td>$consulta[genre]</td><td>$consulta[status]</td></tr>";
 		}
 	}
 	/////fecha a conexão
-	mysql_close($conecta); 
+	mysqli_close($conecta); 
 	
 ?>
