@@ -5,6 +5,7 @@
 	///////////////////////////////
 	////Pega os dados do formulário
 	$name = str_replace("'", "''", $_GET["name"]);
+	echo $name;
 	$platform = isset($_GET["platform"]) ? $_GET["platform"] : "%";
 	$status = isset($_GET["status"])? $_GET["status"] : "";
 	$newName = isset($_GET["newName"])? str_replace("'", "''", $_GET["newName"]) : "";

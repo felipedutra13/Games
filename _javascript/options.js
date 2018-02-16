@@ -132,9 +132,11 @@ function setMenu(){
 				if (this.readyState == 4 && this.status == 200 && count == 0) {
 					initialFilter(typeOption);
 					count++;
+					$("#test").html(this.responseText);
 				}
 			};
 			count = 0;
+			name = name.replace("&amp;", "%26");
 			xmlhttp.open("GET", "_php/update.php?status="+newStatus+"&name="+name+"&platform="+plattform+"&option=updateStatus&type="+typeOption, true);
 			xmlhttp.send();
 			///////////////////////////////////

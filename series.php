@@ -20,6 +20,7 @@
 
       <img id="icone" src="_imagens/series.png"/>
       <nav id="menu">
+	  <span id="test">Teste</span>
         <h1>Main Menu</h1>
         <ul id="menu-principal">
           <li onmouseover="mudaFoto('games.png')" onmouseout="mudaFoto('series.png')"><a href="index.html">Home</a></li>
