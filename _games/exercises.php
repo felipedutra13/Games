@@ -1,7 +1,7 @@
 <?php
 	////Faz a conexão com o banco
-	$conecta = mysql_connect("127.0.0.1", "root", "") or print (mysql_error()); 
-	mysql_select_db("games", $conecta) or print(mysql_error()); 
+	$conecta = mysqli_connect("127.0.0.1", "root", "") or print (mysqli_error()); 
+	mysqli_select_db($conecta, "games") or print(mysqli_error()); 
 	///////////////////////////////
 	
 	////Pega os dados do formulário
@@ -9,21 +9,18 @@
 	$questions = "";
 	$answers = "";
 	
-	if($option == "grammar1" || $option == "grammar2")
-		$query = "SELECT `question`, `answer` FROM `english` WHERE `type`='grammar' AND `sorted`='n' ORDER BY RAND() LIMIT 10;";
-	else $query = "SELECT `question`, `answer` FROM `english` WHERE `type`='exercise' AND `sorted`='n' ORDER BY RAND() LIMIT 10;";
+	$query = "SELECT `question`, `answer` FROM `english` WHERE `sorted`='n' ORDER BY RAND() LIMIT 10;";
+
 	////executa a query no banco
-	$result = mysql_query($query, $conecta);
-	if(mysql_num_rows($result) == 0){
-		if($option == "grammar1" || $option == "grammar2")
-			$query3 = "UPDATE `english` SET `sorted`='n' WHERE `type`='grammar'";
-		else $query3 = "UPDATE `english` SET `sorted`='n' WHERE `type`='exercise'";
-		$result3 = mysql_query($query3, $conecta);
+	$result = mysqli_query($conecta, $query);
+	if(mysqli_num_rows($result) == 0){
+		$query3 = "UPDATE `english` SET `sorted`='n'";
+		$result = mysqli_query($conecta, $query3);
 	}
-	while($consulta = mysql_fetch_array($result)) {
+	while($consulta = mysqli_fetch_array($result)) {
 		$tmp = str_replace("'", "''", "$consulta[question]");
 		$query2 = "UPDATE `english` SET `sorted`='y' WHERE `question`='$tmp';";
-		$result2 = mysql_query($query2, $conecta);
+		$result2 = mysqli_query($conecta, $query2);
 		if($option == "grammar2"){
 			$answers .= "$consulta[question]|";
 			$questions .= "$consulta[answer]|";
@@ -35,5 +32,5 @@
 	}
 	echo $questions . "=" . $answers;
 	/////fecha a conexão
-	mysql_close($conecta); 
+	mysqli_close($conecta); 
 ?>

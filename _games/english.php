@@ -6,6 +6,7 @@
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
 	</head>
 	<script>
+		console.log("teste");
 		var questions = [];
 		var answers = [];
 		function exercises(option){
@@ -21,6 +22,7 @@
 							$("#space").append(""+questions[i]+" <input id='"+i+"' type='text'/></br></br>");
 						}
 						$("#space").append("<input type='button' value='Check' onclick='checkAnswers()'/>");
+						$("#space").append("<input type='button' value='Reveal' onclick='reveal()'/>");
 						
 						
 						
@@ -47,12 +49,24 @@
 				}
 			}
 		}
+		
+		function reveal(){
+			for(var i=0; i<questions.length-1; i++){
+				$("#"+i).val(answers[i]);
+			}
+		}
 	</script>
 	<body>
-		<h1>Select an option!</h1>
+		<form action="../_php/add.php" method="post">
+			<input type="text" value="english" name="type"/>
+			<input type="text" name="question" placeholder="english"/>
+			<input type="text" name="answer" placeholder="portuguese"/>
+			<input type="submit" value="Add"/>
+		</form>
+		<h3>Select an option!</h3>
 		<input type="button" value="Grammar(English to Portuguese)" onclick="exercises('grammar1');"/>
 		<input type="button" value="Grammar(Portuguese to English)" onclick="exercises('grammar2');"/>
-		<input type="button" value="Exercises" onclick="exercises('exercises');"/>
+		<!--<input type="button" value="Exercises" onclick="exercises('exercises');"/>-->
 		</br></br>
 		<div id="space">
 		</div>
