@@ -22,7 +22,7 @@
 		$plattform = "%";
 	
 	if($option == "games" || $option == "dlc"){
-		$query = "SELECT * FROM `$option` WHERE `name` like ('$newName') AND `genre` like ('$genre') AND `plattform` like ('$plattform') AND `status` like ('$status') ORDER BY `name`;";
+		$query = "SELECT * FROM `$option` WHERE `name` like ('$newName') AND `genre` like ('$genre') AND `plattform` like ('$plattform') AND (`status` like ('$status') AND `status` not like ('Retired')) ORDER BY `name`;";
 		//echo $query;
 		////executa a query no banco
 		$result = mysqli_query($conecta, $query); 
