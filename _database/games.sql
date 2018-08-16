@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 29-Jun-2018 às 20:21
+-- Generation Time: 16-Ago-2018 às 17:44
 -- Versão do servidor: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -152,7 +152,9 @@ INSERT INTO `dlc` (`name`, `plattform`, `genre`, `status`, `image`) VALUES
 ('Assassin\'s Creed: Freedom Cry', 'Playstation 4', 'Adventure', 'Backlog', 'https://howlongtobeat.com/gameimages/Assassins_Creed_Freedom_Cry_header.jpg'),
 ('DreadOut: Keepers of The Dark', 'PC', 'Survival Horror', 'Backlog', 'https://howlongtobeat.com/gameimages/36470_DreadOut_Keepers_of_The_Dark.jpg'),
 ('Commandos: Beyond the Call of Duty', 'PC', 'Strategy', 'Backlog', 'https://howlongtobeat.com/gameimages/Commandos_Beyond_the_Call_of_Duty.jpg'),
-('Dying Light: The Following', 'Playstation 4', 'Survival Horror', 'Backlog', 'https://howlongtobeat.com/gameimages/Dying-Light-The-Following-1024x576.jpg');
+('Dying Light: The Following', 'Playstation 4', 'Survival Horror', 'Backlog', 'https://howlongtobeat.com/gameimages/Dying-Light-The-Following-1024x576.jpg'),
+('Overcooked: The Lost Morsel', 'Playstation 4', 'Puzzle', 'Completed', 'https://howlongtobeat.com/gameimages/56236_Overcooked_The_Lost_Morsel.jpg'),
+('Overcooked: Festive Seasoning', 'Playstation 4', 'Puzzle', 'Completed', 'https://howlongtobeat.com/gameimages/42134_Overcooked_Festive_Seasoning_DLC.jpg');
 
 -- --------------------------------------------------------
 
@@ -596,7 +598,7 @@ INSERT INTO `games` (`name`, `plattform`, `genre`, `status`, `image`) VALUES
 ('Earthworm Jim', 'Super Nintendo', 'Plattform', 'Backlog', 'http://howlongtobeat.com/gameimages/256px-Earthworm_Jim_(EUR).PNG'),
 ('The 3rd Birthday', 'PSP', 'Action', 'Completed', 'http://howlongtobeat.com/gameimages/The_3rd_Birthday_Cover.jpg'),
 ('God of War: Chains of Olympus', 'PSP', 'Hack and Slash', 'Completed', 'http://howlongtobeat.com/gameimages/252px-God_of_War_Chains_of_Olympus_NA_version_front_cover.jpg'),
-('God of War: Ghost of Sparta', 'PSP', 'Hack and Slash', 'Backlog', 'http://howlongtobeat.com/gameimages/256px-GOW_Ghost_of_Sparta_boxart.jpg'),
+('God of War: Ghost of Sparta', 'PSP', 'Hack and Slash', 'Playing', 'http://howlongtobeat.com/gameimages/256px-GOW_Ghost_of_Sparta_boxart.jpg'),
 ('Mega Man Powered Up', 'PSP', 'Plattform', 'Completed', 'http://howlongtobeat.com/gameimages/1806095-box_mmpu_large.png'),
 ('Mega Man Maverick Hunter X', 'PSP', 'Plattform', 'Completed', 'http://howlongtobeat.com/gameimages/1806108-box_mmxmh_large.png'),
 ('LittleBigPlanet', 'PSP', 'Plattform', 'Backlog', 'http://howlongtobeat.com/gameimages/Littlebigplanet-psp-box.jpg'),
@@ -742,7 +744,7 @@ INSERT INTO `games` (`name`, `plattform`, `genre`, `status`, `image`) VALUES
 ('Pikmin', 'Wii', 'Adventure', 'Backlog', 'https://howlongtobeat.com/gameimages/Pikmin_cover_art.jpg'),
 ('Red Steel', 'Wii', 'FPS', 'Backlog', 'https://howlongtobeat.com/gameimages/250px-Red-steel-20060926031145442.jpg'),
 ('Super Smash Bros. Brawl', 'Wii', 'Fighting', 'Backlog', 'https://howlongtobeat.com/gameimages/250px-SSBB_Cover.jpg'),
-('Tatsunoko vs. Capcom: Ultimate All-Stars', 'Wii', 'Fighting', 'Backlog', 'https://howlongtobeat.com/gameimages/Tatsunoko_Vs_Capcom_box_artwork.png'),
+('Tatsunoko vs. Capcom: Ultimate All-Stars', 'Wii', 'Fighting', 'Completed', 'https://howlongtobeat.com/gameimages/Tatsunoko_Vs_Capcom_box_artwork.png'),
 ('Xenoblade', 'Wii', 'RPG', 'Backlog', 'https://howlongtobeat.com/gameimages/250px-XenobladeBox.png'),
 ('Ape Escape: On the Loose', 'PSP', 'Adventure', 'Backlog', 'https://howlongtobeat.com/gameimages/1837487-box_aeotl_large.jpg'),
 ('Assassin\'s Creed: Bloodlines', 'PSP', 'Action', 'Backlog', 'https://howlongtobeat.com/gameimages/Assassins_Creed_Bloodlines.jpg'),
@@ -765,7 +767,7 @@ INSERT INTO `games` (`name`, `plattform`, `genre`, `status`, `image`) VALUES
 ('Zombies Ate My Neighbors', 'Super Nintendo', 'Adventure', 'Completed', 'https://howlongtobeat.com/gameimages/150px-Zombies_Ate_My_Neighbors_box.jpg'),
 ('The Lost Vikings 2', 'Super Nintendo', 'Plattform', 'Backlog', 'https://howlongtobeat.com/gameimages/220px-Lost_Vikings_2_Boxshot.jpg'),
 ('Sunset Riders', 'Super Nintendo', 'Action', 'Backlog', 'https://howlongtobeat.com/gameimages/Sunset_Riders_arcade_flyer.jpg'),
-('Banjo-Kazooie', 'Xbox 360', 'Plattform', 'Playing', 'https://howlongtobeat.com/gameimages/250px-BanjoKazooieCover500px.jpg'),
+('Banjo-Kazooie', 'Xbox 360', 'Plattform', 'Completed', 'https://howlongtobeat.com/gameimages/250px-BanjoKazooieCover500px.jpg'),
 ('Croc: Legend of the Gobbos', 'Playstation', 'Plattform', 'Backlog', 'https://howlongtobeat.com/gameimages/250px-Croc_Legend_of_the_Gobbos.jpg'),
 ('Bayonetta', 'Xbox 360', 'Hack and Slash', 'Backlog', 'https://howlongtobeat.com/gameimages/Bayonetta_Box_Art.jpg'),
 ('Bulletstorm', 'Xbox 360', 'Action', 'Backlog', 'https://howlongtobeat.com/gameimages/Bulletstorm.jpg'),
@@ -833,7 +835,7 @@ INSERT INTO `games` (`name`, `plattform`, `genre`, `status`, `image`) VALUES
 ('Mass Effect', 'Xbox 360', 'RPG', 'Backlog', 'https://howlongtobeat.com/gameimages/Mass_Effect_poster.jpg'),
 ('Bomberman', 'Nintendo DS', 'Puzzle', 'Completed', 'https://howlongtobeat.com/gameimages/256px-BombermanDScover.png'),
 ('Uncharted 4: A Thief\'s End', 'Playstation 4', 'Action', 'Completed', 'https://howlongtobeat.com/gameimages/Uncharted_4_Reveal_Wallpaper.jpg'),
-('Bloodborne', 'Playstation 4', 'RPG', 'Backlog', 'https://howlongtobeat.com/gameimages/Bloodborne_Cover_Wallpaper.jpg'),
+('Bloodborne', 'Playstation 4', 'RPG', 'Completed', 'https://howlongtobeat.com/gameimages/Bloodborne_Cover_Wallpaper.jpg'),
 ('Super Meat Boy', 'Xbox 360', 'Plattform', 'Completed', 'https://howlongtobeat.com/gameimages/SuperMeatBoy_cover.png'),
 ('Wario Land: Super Mario Land 3', 'Game Boy', 'Plattform', 'Backlog', 'https://howlongtobeat.com/gameimages/250px-Wario_Land_Box_Art.jpg'),
 ('Donkey Kong Land 2', 'Game Boy', 'Plattform', 'Backlog', 'https://howlongtobeat.com/gameimages/Donkey_Kong_Land_2_Coverart.jpg'),
@@ -874,7 +876,7 @@ INSERT INTO `games` (`name`, `plattform`, `genre`, `status`, `image`) VALUES
 ('99Vidas', 'Playstation 4', 'Beat \'em up', 'Completed', 'https://howlongtobeat.com/gameimages/42342_99Vidas.jpg'),
 ('Super Scribblenauts', 'Nintendo DS', 'Puzzle', 'Completed', 'https://howlongtobeat.com/gameimages/252px-Superscribblenautsboxsmall.jpg'),
 ('Resident Evil 2', 'Playstation', 'Survival Horror', 'Completed', 'https://howlongtobeat.com/gameimages/250px-Resident_Evil_2.jpg'),
-('TrackMania Turbo', 'Playstation 4', 'Racing', 'Backlog', 'https://howlongtobeat.com/gameimages/35764_TrackMania_Turbo.jpg'),
+('TrackMania Turbo', 'Playstation 4', 'Racing', 'Retired', 'https://howlongtobeat.com/gameimages/35764_TrackMania_Turbo.jpg'),
 ('Beyond: Two Souls', 'Playstation 4', 'Adventure', 'Backlog', 'https://howlongtobeat.com/gameimages/Beyond_Two_Souls_cover.png'),
 ('Alpha Protocol', 'Xbox 360', 'Action', 'Backlog', 'https://howlongtobeat.com/gameimages/Alpha_Protocol_cover.jpg'),
 ('Final Fantasy Tactics', 'Playstation', 'RPG', 'Backlog', 'https://howlongtobeat.com/gameimages/Fftbox.jpg'),
@@ -909,7 +911,7 @@ INSERT INTO `games` (`name`, `plattform`, `genre`, `status`, `image`) VALUES
 ('Sky Force Reloaded', 'PSP', 'Action', 'Backlog', 'https://howlongtobeat.com/gameimages/27055_Sky_Force.jpg'),
 ('Deus Ex', 'PC', 'Action', 'Backlog', 'https://howlongtobeat.com/gameimages/250px-Dxcover.jpg'),
 ('Super Mario 64 DS', 'Nintendo DS', 'Plattform', 'Backlog', 'https://howlongtobeat.com/gameimages/250px-Super_Mario_64_DS_Coverart.png'),
-('Donkey Kong Country Returns 3D', 'Nintendo 3DS', 'Plattform', 'Playing', 'https://howlongtobeat.com/gameimages/Donkey_Kong_Country_Returns_3D.jpg'),
+('Donkey Kong Country Returns 3D', 'Nintendo 3DS', 'Plattform', 'Completed', 'https://howlongtobeat.com/gameimages/Donkey_Kong_Country_Returns_3D.jpg'),
 ('Klonoa', 'Wii', 'Plattform', 'Backlog', 'https://howlongtobeat.com/gameimages/Klonoa_Wii_Front.jpg'),
 ('Blue State: The Game', 'Playstation 4', 'Action', 'Completed', 'https://howlongtobeat.com/gameimages/Blue-Estate_20140626004240.jpg'),
 ('Dead or Alive 5 Last Round', 'Xbox 360', 'Fighting', 'Backlog', 'https://howlongtobeat.com/gameimages/DeadorAlive5LastRound.jpg'),
@@ -920,7 +922,7 @@ INSERT INTO `games` (`name`, `plattform`, `genre`, `status`, `image`) VALUES
 ('Super Mario Strikers', 'GameCube', 'Action', 'Backlog', 'https://howlongtobeat.com/gameimages/Supermariostrikersbox.jpg'),
 ('Castlevania', 'Nintendinho', 'Adventure', 'Backlog', 'https://howlongtobeat.com/gameimages/250px-Castlevania_NES_box_art.jpg'),
 ('Wonder Boy', 'Master System', 'Plattform', 'Backlog', 'https://howlongtobeat.com/gameimages/250px-WonderBoy_arcadeflyer.png'),
-('Call of Duty: Black Ops III', 'Playstation 4', 'FPS', 'Backlog', 'https://howlongtobeat.com/gameimages/COD_Black_Ops_3.jpg'),
+('Call of Duty: Black Ops III', 'Playstation 4', 'FPS', 'Playing', 'https://howlongtobeat.com/gameimages/COD_Black_Ops_3.jpg'),
 ('Soul Edge', 'Playstation', 'Fighting', 'Backlog', 'https://howlongtobeat.com/gameimages/256px-Soul_Edge_arcade_flyer.jpg'),
 ('Ridge Racer', 'PSP', 'Racing', 'Backlog', 'https://howlongtobeat.com/gameimages/Ridge_Racer_(PSP)_Coverart.png'),
 ('Paper Mario: The Thousand-Year Door', 'GameCube', 'RPG', 'Backlog', 'https://howlongtobeat.com/gameimages/Ttydbox.jpg'),
@@ -928,9 +930,32 @@ INSERT INTO `games` (`name`, `plattform`, `genre`, `status`, `image`) VALUES
 ('Ikaruga', 'Xbox 360', 'Action', 'Backlog', 'https://howlongtobeat.com/gameimages/250px-Ikaruga_cover_DC.jpg'),
 ('Half-Minute Hero', 'PSP', 'RPG', 'Backlog', 'https://howlongtobeat.com/gameimages/HalfMinuteHeroCover.png'),
 ('Poochy & Yoshi\'s Woolly World', 'Nintendo 3DS', 'Plattform', 'Backlog', 'https://howlongtobeat.com/gameimages/43482_Poochy_&_Yoshis_Woolly_World.jpg'),
-(' The Awesome Adventures of Captain Spirit', 'Playstation 4', 'Adventure', 'Backlog', 'https://howlongtobeat.com/gameimages/57443_The_Awesome_Adventures_of_Captain_Spirit.jpg'),
-('Heavy Rain', 'Playstation 4', 'Adventure', 'Backlog', 'https://howlongtobeat.com/gameimages/Heavy_Rain_Cover_Art.jpg'),
-('Banjo-Kazooie: Grunty\'s Revenge', 'Game Boy Advance', 'Plattform', 'Backlog', 'https://howlongtobeat.com/gameimages/Bkgruntysrevengentsc.jpg');
+('The Awesome Adventures of Captain Spirit', 'Playstation 4', 'Adventure', 'Completed', 'https://howlongtobeat.com/gameimages/57443_The_Awesome_Adventures_of_Captain_Spirit.jpg'),
+('Heavy Rain', 'Playstation 4', 'Adventure', 'Completed', 'https://howlongtobeat.com/gameimages/Heavy_Rain_Cover_Art.jpg'),
+('Banjo-Kazooie: Grunty\'s Revenge', 'Game Boy Advance', 'Plattform', 'Backlog', 'https://howlongtobeat.com/gameimages/Bkgruntysrevengentsc.jpg'),
+('Overcooked', 'Playstation 4', 'Strategy', 'Completed', 'https://howlongtobeat.com/gameimages/39030_Overcooked.jpg'),
+('Full Throttle', 'Playstation 4', 'Adventure', 'Completed', 'https://howlongtobeat.com/gameimages/44400_Full_Throttle_Remastered.jpg'),
+('The Vanishing of Ethan Carter', 'Playstation 4', 'Survival Horror', 'Completed', 'https://howlongtobeat.com/gameimages/The_Vanishing_of_Ethan_Carter.jpg'),
+('Unravel', 'Playstation 4', 'Plattform', 'Completed', 'https://howlongtobeat.com/gameimages/nat-games-unravel-1280x720.jpg'),
+('Mario Party: Island Tour', 'Nintendo 3DS', 'Puzzle', 'Playing', 'https://howlongtobeat.com/gameimages/Mario_Party_Island_Tour_boxart.png'),
+('Pac-Man and the Ghostly Adventures', 'Nintendo 3DS', 'Plattform', 'Backlog', 'https://howlongtobeat.com/gameimages/Pac-Man_and_the_Ghostly_Adventures.jpg'),
+('Captain Toad: Treasure Tracker', 'Nintendo 3DS', 'Puzzle', 'Backlog', 'https://howlongtobeat.com/gameimages/CaptainToadtreasuretracker.png'),
+('Mega Man 9', 'Xbox 360', 'Action', 'Backlog', 'https://howlongtobeat.com/gameimages/Megaman9cover.jpg'),
+('Skullmonkeys', 'Playstation', 'Plattform', 'Backlog', 'https://howlongtobeat.com/gameimages/Skullmonkeys_Box.jpg'),
+('Inazuma Eleven', 'Nintendo DS', 'RPG', 'Backlog', 'https://howlongtobeat.com/gameimages/Inazuma_Eleven.jpg'),
+('Azure Striker Gunvolt', 'Nintendo 3DS', 'Action', 'Backlog', 'https://howlongtobeat.com/gameimages/AzureStrikerGUNVOLT.jpg'),
+('Super Castlevania IV', 'Super Nintendo', 'Action', 'Backlog', 'https://howlongtobeat.com/gameimages/250px-Super_Castlevania_IV_USA.jpg'),
+('The Conduit', 'Wii', 'Action', 'Backlog', 'https://howlongtobeat.com/gameimages/The_Conduit_Box_Art.jpg'),
+('Mafia III', 'Playstation 4', 'Action', 'Backlog', 'https://howlongtobeat.com/gameimages/34002_Mafia_III.jpg'),
+('The Firemen', 'Super Nintendo', 'Adventure', 'Backlog', 'https://howlongtobeat.com/gameimages/270px-Firemensfcbox.PNG'),
+('This War of Mine: The Little Ones', 'Playstation 4', 'Adventure', 'Backlog', 'https://howlongtobeat.com/gameimages/34142_This_War_of_Mine_The_Little_Ones.jpg'),
+('Clock Tower', 'Super Nintendo', 'Survival Horror', 'Backlog', 'https://howlongtobeat.com/gameimages/250px-Clocktower1.jpg'),
+('Rascal', 'Playstation', 'Plattform', 'Backlog', 'https://howlongtobeat.com/gameimages/Rascal_Coverart.png'),
+('Mario Kart Wii', 'Wii', 'Racing', 'Completed', 'https://howlongtobeat.com/gameimages/250px-Mario_Kart_Wii.png'),
+('Final Fantasy XV', 'Playstation 4', 'RPG', 'Backlog', 'https://howlongtobeat.com/gameimages/final-fantasy-15-box-art-280x400.jpg'),
+('The Last Guardian', 'Playstation 4', 'Adventure', 'Backlog', 'https://howlongtobeat.com/gameimages/256px-TheLastGuardian.jpg'),
+('The Evil Within 2', 'Playstation 4', 'Survival Horror', 'Backlog', 'https://howlongtobeat.com/gameimages/46568_The_Evil_Within_2.jpg'),
+('Gravity Rush 2', 'Playstation 4', 'Action', 'Backlog', 'https://howlongtobeat.com/gameimages/Gravity-Rush-2-ms.jpg');
 
 -- --------------------------------------------------------
 
@@ -1069,7 +1094,10 @@ INSERT INTO `movies` (`name`, `plattform`, `genre`, `status`, `image`) VALUES
 ('Tremors', 'Xbox 360', 'Thriller', 'Watched', 'https://img.fstatic.com/JFjour5zMMHIDekTCmToJfZUU9I=/fit-in/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2013/06/o-ataque-dos-vermes-malditos_t3052_1.jpg'),
 ('Amityville: The Awakening', 'Xbox 360', 'Horror', 'Watched', 'https://img.fstatic.com/WGbd6ZCnrUFi6wxhlHl3VeAi748=/fit-in/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2016/03/amityville-the-awakening_t73281.jpg'),
 ('Jumanji: Welcome to the Jungle', 'Xbox 360', 'Adventure', 'Watched', 'https://img.fstatic.com/7i-kY2QyxiwR7q9bt4gOFDpK3bY=/fit-in/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2017/06/DDfmUAFW0AAyT9c.jpg'),
-('Jurassic World: Fallen Kingdom', 'Xbox 360', 'Action', 'Watched', 'https://media.fstatic.com/D-W-oRQ2dZyns12ki9T9-P9OOT8=/fit-in/210x312/smart/media/movies/covers/2018/04/unnamed_qHby4w2.jpg');
+('Jurassic World: Fallen Kingdom', 'Xbox 360', 'Action', 'Watched', 'https://media.fstatic.com/D-W-oRQ2dZyns12ki9T9-P9OOT8=/fit-in/210x312/smart/media/movies/covers/2018/04/unnamed_qHby4w2.jpg'),
+('Donnie Darko', 'Xbox 360', 'Thriller', 'Watched', 'https://media.fstatic.com/qpvRBv2lqTikm0G9cQrBnWvhFlA=/fit-in/210x312/smart/media/movies/covers/2011/05/28f4cb36f7bba5a21c714a980a085769.jpg'),
+('A Quiet Place', 'Xbox 360', 'Thriller', 'Watched', 'https://media.fstatic.com/nImTtUVYBGiI9bRd6XtLwcwisDk=/fit-in/210x312/smart/media/movies/covers/2018/02/lugarsilencioso_6.jpg'),
+('Deadpool', 'Xbox 360', 'Action', 'Watched', 'https://media.fstatic.com/L1pqtvH3bxTRLeIUy4oZLhxab1o=/fit-in/210x312/smart/media/movies/covers/2015/12/deadpool_t14204_djEjzFl.jpg');
 
 -- --------------------------------------------------------
 
@@ -1112,7 +1140,7 @@ INSERT INTO `series` (`name`, `plattform`, `genre`, `status`, `image`) VALUES
 ('Lost', '', 'Thriller', 'Watched', 'https://img.fstatic.com/CHgkB_JRuwjSmBwhCWVaG7cvlW4=/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2010/01/7cbe263073e39efd0eba01662872da7d.jpg'),
 ('Mr. Robot (Season 2)', '', 'Drama', 'Backlog', 'https://img.fstatic.com/CZyXCBkqu06-aBnJvzuc1qeKbO4=/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2015/04/mr-robot-1a-temporada_t113869.jpg'),
 ('Mr. Sunshine', '', 'Comedy', 'Watched', 'https://img.fstatic.com/W6Zm_IVXZLf5kS39hGMj8cpQCbU=/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2011/02/227b5099aada988e63f28f5dfd25e00c.jpg'),
-('Naruto (Episode 99)', '', 'Anime', 'Watched', 'https://img.fstatic.com/BRgOxwWX0yof-0Cv-bKpbzUmJ5Y=/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2014/11/naruto-2a-temporada_t26197_1.jpg'),
+('Naruto (Episode 99)', '', 'Anime', 'Watching', 'https://img.fstatic.com/BRgOxwWX0yof-0Cv-bKpbzUmJ5Y=/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2014/11/naruto-2a-temporada_t26197_1.jpg'),
 ('One Tree Hill (Season 1)', '', 'Drama', 'Watched', 'https://img.fstatic.com/hyZkoWKc1ehnlFfG7sgZLtHZauc=/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2010/01/81cd9947b86acd1deb083632c1ce29ee.jpg'),
 ('Os Cavaleiros do Zodíaco: Santurário', '', 'Anime', 'Watched', 'https://img.fstatic.com/yivJMHqRyCq_t1BbcIGSzH0OfMQ=/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2014/11/os-cavaleiros-do-zodiaco-saga-1-santuario_t25294_1.jpg'),
 ('Os Cavaleiros do Zodíaco: Asgard', '', 'Anime', 'Watched', 'https://img.fstatic.com/FJDc3txPBccqAYQOYuifKIw2W38=/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2014/11/os-cavaleiros-do-zodiaco-saga-2-asgard_t25295_2.jpg'),
@@ -1129,16 +1157,16 @@ INSERT INTO `series` (`name`, `plattform`, `genre`, `status`, `image`) VALUES
 ('The Big Bang Theory (Season 10)', '', 'Comedy', 'Watched', 'https://img.fstatic.com/SpVo-2-gV_3l2VYlm8qs36AKTT8=/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2010/02/c1a64faf6b4dd65743253b2fb57e07d3.jpg'),
 ('The Middle (Season 1)', '', 'Comedy', 'Watched', 'https://img.fstatic.com/SPyPSvb1dxomJQ3yRQgbSZ-Nzd8=/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2011/05/c179891a6becd1869cbbbc67e5d3e8b3.jpg'),
 ('The OC', '', 'Drama', 'Watched', 'https://img.fstatic.com/bE-NnUin-K1xUZKtG-3LvO3slX8=/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2010/11/e9c760eb4788dfa320a7f64ac6f5e2a3.jpg'),
-('The Ranch (Season 5)', '', 'Comedy', 'Watching', 'https://img.fstatic.com/DEZ5byLXxSN16HXc827T5rx1FAw=/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2016/03/the-ranch-1a-temporada_t126285_CeSf9ov.jpg'),
+('The Ranch (Season 5)', '', 'Comedy', 'Watched', 'https://img.fstatic.com/DEZ5byLXxSN16HXc827T5rx1FAw=/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2016/03/the-ranch-1a-temporada_t126285_CeSf9ov.jpg'),
 ('The Simpsons (Season 1)', '', 'Comedy', 'Watched', 'https://img.fstatic.com/BN_FOJWCOBeDzgtLHcLmawJcwvI=/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2010/02/b915cdea4d098d415f38e20fc494ff28.jpg'),
 ('The Vampire Diaries', '', 'Drama', 'Watched', 'https://img.fstatic.com/ZbGCSzNwVcYS1GkujjAlQZbfxuQ=/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2012/02/279d1256f8095f17c6cd8f2dfec25fb6.jpg'),
 ('The Walking Dead (Season 7)', '', 'Thriller', 'Watched', 'https://img.fstatic.com/7zM4ZAP0lEXtDprGilk2zLYAl2M=/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2010/09/2449c03fd2d98d4e4e219cc807eee626.jpg'),
 ('Two and a Half Men', '', 'Comedy', 'Watched', 'https://img.fstatic.com/LVONbpdn26RSoBGUHf_WqLBmj88=/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2010/05/b350ba803559f63419df7dabe40e7f9f.jpg'),
-('Will & Grace (Season 5)', '', 'Comedy', 'Watching', 'https://img.fstatic.com/22gR6NC_PBIdq-l4snRYxdXai4E=/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2010/01/dff6431e680950d4f85750c19c77d559.jpg'),
+('Will & Grace (Season 6)', '', 'Comedy', 'Watching', 'https://img.fstatic.com/22gR6NC_PBIdq-l4snRYxdXai4E=/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2010/01/dff6431e680950d4f85750c19c77d559.jpg'),
 ('Yu-Gi-Oh! (Episode 49)', '', 'Anime', 'Backlog', 'https://img.fstatic.com/uOCcFYsGlyTUgOQh39LvvI-dZ7I=/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2015/08/yu-gi-oh-duel-monsters_tNone.jpg'),
 ('Z Nation (Season 3)', '', 'Zombies', 'Backlog', 'https://img.fstatic.com/XTnFLL6lCB6_K-pWLo7aQAa2nR0=/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2014/07/z-nation_t97611.jpg'),
 ('Dead of Summer', '', 'Thriller', 'Watched', 'https://img.fstatic.com/TsQnSZCUanyYmVg6_pgeXYhsUS4=/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2016/05/dead-of-summer-1a-temporada_t195635_7LH2ACM.jpg'),
-('Orphan Black (Season 3)', '', 'Thriller', 'Watched', 'https://img.fstatic.com/G74jckw6_MKQ08vYCScoKO44aLU=/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2016/06/orphan-black-5a-temporada_t206202.jpg'),
+('Orphan Black (Season 4)', '', 'Thriller', 'Watching', 'https://img.fstatic.com/G74jckw6_MKQ08vYCScoKO44aLU=/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2016/06/orphan-black-5a-temporada_t206202.jpg'),
 ('Slasher (Season 1)', '', 'Thriller', 'Watched', 'https://img.fstatic.com/jT09Ydgz1zlKKABspYBU6a0w8t8=/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2016/02/slasher_tNone.png'),
 ('The Originals (Season 4)', '', 'Thriller', 'Backlog', 'https://img.fstatic.com/wlTMKABkSpLunr23ENPMS4A0CBw=/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2013/05/97f855b4918d62d6d9c9f5f94521faa3.jpg'),
 ('Fear the Walking Dead (Season 1)', '', 'Thriller', 'Backlog', 'https://img.fstatic.com/KhT2j4GoQR7K3ceMpx7bSapLjd8=/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2015/08/fear-the-walking-dead-1a-temporada_t85922.jpg'),
@@ -1167,10 +1195,10 @@ INSERT INTO `series` (`name`, `plattform`, `genre`, `status`, `image`) VALUES
 ('Death Note', 'Xbox 360', 'Anime', 'Watched', 'https://img.fstatic.com/sN7A01X_2_rH8Ihgj3-azQj8ZPI=/fit-in/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2014/08/death-note-1a-temporada_t24340_33.jpg'),
 ('La Casa de Papel (Season 2)', 'Xbox 360', 'Action', 'Watched', 'https://img.fstatic.com/8pnmGSL1InzaEPheSJvz8j3mVOM=/fit-in/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2017/12/la_casa_de_papel.jpg'),
 ('Rick and Morty (Season 2)', 'Xbox 360', 'Comedy', 'Watched', 'https://img.fstatic.com/uTtjB7Dk89WXBXCB7Cb3D_4lfxA=/fit-in/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2015/08/rick-and-morty-1a-temporada_t94187.jpg'),
-('BoJack Horseman (Season 1)', 'Xbox 360', 'Anime', 'Watching', 'https://img.fstatic.com/2EFgIBfzLPah6PTPIgMmvVoYGyA=/fit-in/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2017/09/8e406cd4cd51e5f1327c8feecc721a95f41e7320.jpg'),
+('BoJack Horseman (Season 1)', 'Xbox 360', 'Anime', 'Watched', 'https://img.fstatic.com/2EFgIBfzLPah6PTPIgMmvVoYGyA=/fit-in/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2017/09/8e406cd4cd51e5f1327c8feecc721a95f41e7320.jpg'),
 ('The Rain (Season 1)', 'Xbox 360', 'Thriller', 'Watched', 'https://img.fstatic.com/XyXF7K4kKTwZXaQtBQQCJGJV7Kk=/fit-in/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2018/04/rain4.jpg'),
-('The Terror (Season 1)', 'Xbox 360', 'Thriller', 'Watching', 'https://img.fstatic.com/aaomC6Pm4oyJaRygBWQ0815o0z8=/fit-in/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2018/04/4f0e6f7549c19f1cb6e93df54d38543f.jpg'),
-('Brooklyn Nine-Nine (Season 1)', 'Xbox 360', 'Comedy', 'Watching', 'https://img.fstatic.com/WqKFIXWcsLyx16mvF71Jdt6K-p0=/fit-in/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2014/04/brooklyn-nine-nine-1a-temporada_t79059.jpg');
+('The Terror (Season 1)', 'Xbox 360', 'Thriller', 'Watched', 'https://img.fstatic.com/aaomC6Pm4oyJaRygBWQ0815o0z8=/fit-in/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2018/04/4f0e6f7549c19f1cb6e93df54d38543f.jpg'),
+('Brooklyn Nine-Nine (Season 2)', 'Xbox 360', 'Comedy', 'Watching', 'https://img.fstatic.com/WqKFIXWcsLyx16mvF71Jdt6K-p0=/fit-in/210x312/smart/https://cdn.fstatic.com/media/movies/covers/2014/04/brooklyn-nine-nine-1a-temporada_t79059.jpg');
 
 -- --------------------------------------------------------
 
