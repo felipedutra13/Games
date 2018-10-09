@@ -97,18 +97,18 @@
         <tbody id="games-list">
 		  <?php 
 				////Faz a conexão com o banco
-				$conecta = mysql_connect("127.0.0.1", "root", "") or print (mysql_error()); 
-				mysql_select_db("games", $conecta) or print(mysql_error()); 
+				$conecta = mysqli_connect("127.0.0.1", "root", "") or print (mysql_error()); 
+				mysqli_select_db($conecta, "games") or print(mysql_error()); 
 				///////////////////////////////
 				
 				/////Le as mensagens do banco
 				$sql = "SELECT `name`, `platform`, `genre` FROM `coop` ORDER BY `name`"; 
-				$result = mysql_query($sql, $conecta); 
+				$result = mysqli_query($conecta, $sql); 
 
 				///////////////
 				/* Escreve resultados até que não haja mais linhas na tabela */ 
 				 
-				while($consulta = mysql_fetch_array($result)) { 
+				while($consulta = mysqli_fetch_array($result)) { 
 				   echo "<tr><td><a href='#'>$consulta[name]</a></td><td>$consulta[platform]</td><td>$consulta[genre]</td></tr>";
 				}
 			?>

@@ -39,6 +39,7 @@
 		$status = $_POST["status"];
 		$image = $_POST["image"];
 		$query = "INSERT INTO `$option` VALUES('$name','$platform','$genre','$status','$image');";
+		echo $query;
 		
 			////executa a query no banco
 		$result = mysqli_query($conecta, $query); 

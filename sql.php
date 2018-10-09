@@ -60,7 +60,7 @@
 	  <form action="_php/add.php" method="post">
 		<select id="type" name="type">
 		  <option value="games">Game</option>
-		  <option value="Co-op">Co-op</option>
+		  <option value="coop">Co-op</option>
 		  <option value="movies">Movie</option>
 		  <option value="series">Serie</option>
 		  <option value="books">Book</option>
