@@ -86,6 +86,24 @@ function setMenu(){
 			});
 		});
 		
+		////complete full game
+		$("#completeFullGame").click(function() {
+		console.log("clicou");
+			$("#options").hide();
+				//////try to make the request
+				var xmlhttp = new XMLHttpRequest();
+				xmlhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200 && count == 0) {
+						count++;
+						initialFilter(typeOption);
+					}
+				};
+				count = 0;
+				xmlhttp.open("GET", "_php/update.php?name="+name+"&platform="+plattform+"&option=completeFullGame&type="+typeOption, true);
+				xmlhttp.send();
+				///////////////////////////////////
+		});
+		
 		////change the name
 		$("#changeName").click(function () {
 			$("#options").hide();

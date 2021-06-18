@@ -1,5 +1,7 @@
 ////make the filter for the games
 $(function(){
+
+console.log("teste");
 	  covers();
 	  //////filter
 	  $("#tabela select").on("change", auxGame);  
@@ -48,6 +50,7 @@ function makeFilter(option) {
 			var plattform = $("#plataformaDlc").val();
 			var genre = $("#generoDlc").val();
 			var statusGame = $("#statusDlc").val();
+			var fullGame = $("#fullGameDlc").val();
 		}	
 		else {
 			$(".games").remove();
@@ -61,6 +64,7 @@ function makeFilter(option) {
 			else var plattform = "";
 			var genre = $("#genero").val();
 			var statusGame = $("#status").val();
+			var fullGame = $("#fullGame").val();
 		}	
 		//////try to make the request
 		var xmlhttp = new XMLHttpRequest();
@@ -78,7 +82,7 @@ function makeFilter(option) {
 				setMenu();
             }
         };
-		xmlhttp.open("GET", "_php/filter.php?status="+statusGame+"&name="+name+"&genre="+genre+"&plattform="+plattform+"&option="+option, true);
+		xmlhttp.open("GET", "_php/filter.php?status="+statusGame+"&name="+name+"&genre="+genre+"&plattform="+plattform+"&option="+option+"&fullGame="+fullGame, true);
 		xmlhttp.send();
 }
 
@@ -135,12 +139,14 @@ function initialFilter(typeOption) {
 		var plattform = $("#plataforma").val();
 		var genre = $("#genero").val();
 		var statusGame = $("#status").val();
+		var fullGame = $("#fullGame").val();
 	}
 	else {
 		var name = $("#nameFilterDlc").val();
 		var plattform = $("#plataformaDlc").val();
 		var genre = $("#generoDlc").val();
 		var statusGame = $("#statusDlc").val();
+		var fullGame = $("#fullGameDlc").val();
 	}
 
 	
@@ -159,7 +165,7 @@ function initialFilter(typeOption) {
 			}
 		}
 	};
-	xmlhttp.open("GET", "_php/filter.php?status="+statusGame+"&name="+name+"&genre="+genre+"&plattform="+plattform+"&option="+typeOption, true);
+	xmlhttp.open("GET", "_php/filter.php?status="+statusGame+"&name="+name+"&genre="+genre+"&plattform="+plattform+"&option="+typeOption+"&fullGame="+fullGame, true);
 	xmlhttp.send();
 	///////////////////////////////////
 }

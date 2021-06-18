@@ -69,6 +69,7 @@
 		<input type="text" id="nome" name="name"/>
 		<select id="plataforma" name="platform">
 		  <option value="Xbox 360">Xbox 360</option>
+		  <option value="Switch">Switch</option>
 		  <option value="Super Nintendo">Super Nintendo</option>
 		  <option value="Game Boy Advance">Game Boy Advance</option>
 		  <option value="Playstation">Playstation</option>

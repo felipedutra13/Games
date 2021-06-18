@@ -10,6 +10,7 @@
 	$genre = $_GET["genre"];
 	$plattform = $_GET["plattform"];
 	$option = $_GET["option"];
+	$fullGame = $_GET["fullGame"];
 	
 	if($name == "")
 		$newName = "%";
@@ -20,14 +21,20 @@
 		$genre = "%";
 	if($plattform == "All" || $plattform == "")
 		$plattform = "%";
+	if($fullGame == "All" || $fullGame == "")
+		$fullGame = "%";
 	
 	if($option == "games" || $option == "dlc"){
-		$query = "SELECT * FROM `$option` WHERE `name` like ('$newName') AND `genre` like ('$genre') AND `plattform` like ('$plattform') AND (`status` like ('$status') AND `status` not like ('Retired')) ORDER BY `name`;";
-		//echo $query;
+		$query = "SELECT * FROM `$option` WHERE `name` like ('$newName') AND `genre` like ('$genre') AND `plattform` like ('$plattform') AND `fullGame` like ('$fullGame') AND (`status` like ('$status') AND `status` not like ('Retired')) ORDER BY `name`;";
+
 		////executa a query no banco
 		$result = mysqli_query($conecta, $query); 
 		while($consulta = mysqli_fetch_array($result)) {
-			echo "<tr class='$option'><td><a>$consulta[name]</a></td><td>$consulta[plattform]</td><td>$consulta[genre]</td><td>$consulta[status]</td></tr>";
+			$value = "$consulta[fullGame]";
+			if ($value == "check") {
+				$value = "&#10003";
+			}
+			echo "<tr class='$option'><td><a>$consulta[name]</a></td><td>$consulta[plattform]</td><td>$consulta[genre]</td><td>$consulta[status]</td><td>$value</td></tr>";
 		}
 	}
 	else {

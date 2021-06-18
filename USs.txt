@@ -1,0 +1,2 @@
+- Adição de DLC não está funcionando.
+- Adicionar log de erro.

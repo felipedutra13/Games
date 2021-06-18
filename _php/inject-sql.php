@@ -9,8 +9,12 @@
 
 	////executa a query no banco
 	$result = mysqli_query($conecta, $query); 
+	
+	while($consulta = mysqli_fetch_array($result)) {
+		$echo "teste;
+	}
 	/////fecha a conexão
 	mysqli_close($conecta); 
 	
-	header("location:../sql.php");
+	//header("location:../sql.php");
 ?>

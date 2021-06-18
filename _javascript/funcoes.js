@@ -61,6 +61,7 @@ $(function () {
 //choose a random console game//
 $(function () {
 	$("#randomConsole").click(function() {
+
 		var ok = false;
 		while(!ok){
 			var total = $("#games-list tr:visible").length;
@@ -68,7 +69,24 @@ $(function () {
 			var game = $("#games-list tr:visible:nth-child("+tmp+") a").text();
 			var plattform = $("#games-list tr:visible:nth-child("+tmp+") td:nth-child(2)").text();
 			
-			if(plattform == "Xbox 360" || plattform == "Playstation 2" || plattform == "Playstation 4" || plattform == "PC" || plattform == "Xbox" || plattform == "Wii" || plattform == "GameCube"){
+			if(plattform == "Xbox 360" || plattform == "Playstation 2" || plattform == "Xbox" || plattform == "Wii" || plattform == "GameCube"){
+				alert(game + " - " + plattform);
+				ok = true;
+			}
+		}		
+	});
+	
+	//choose a random new console game//
+	$("#randomNewConsole").click(function() {
+
+		var ok = false;
+		while(!ok){
+			var total = $("#games-list tr:visible").length;
+			var tmp = Math.floor((Math.random() * total) + 1);
+			var game = $("#games-list tr:visible:nth-child("+tmp+") a").text();
+			var plattform = $("#games-list tr:visible:nth-child("+tmp+") td:nth-child(2)").text();
+			
+			if(plattform == "Playstation 4" || plattform == "Switch"){
 				alert(game + " - " + plattform);
 				ok = true;
 			}
@@ -93,7 +111,7 @@ $(function () {
 	});
 	
 	$("#randomPlatform").click(function () {
-		var platforms = ["Game Boy", "Game Boy Advance", "GameCube", "Master System", "Mega Drive", "Nintendinho", "Nintendo 64", "Nintendo DS", "Nintendo 3DS", "Playstation", "Playstation 2", "Playstation 4", "PSP", "Super Nintendo", "Wii", "Xbox", "Xbox 360"];
+		var platforms = ["Game Boy", "Game Boy Advance", "GameCube", "Master System", "Mega Drive", "Nintendinho", "Nintendo 64", "Nintendo DS", "Nintendo 3DS", "Playstation", "Playstation 2", "Playstation 4", "PSP", "Super Nintendo", "Switch", "Wii", "Xbox", "Xbox 360"];
 		
 		var tmp = Math.floor(Math.random() * platforms.length);
 		alert(platforms[tmp]);
@@ -119,6 +137,7 @@ var countPlaystation2 = 0;
 var countPlaystation4 = 0;
 var countPsp = 0;
 var countSupernes = 0;
+var countSwitch = 0;
 var countMasterSystem = 0;
 var countGameBoy = 0;
 var countUnique = 0;
@@ -152,10 +171,11 @@ $(function() {
 				countPlaystation4 = Number(qnt[15]);
 				countPsp = Number(qnt[16]);
 				countSupernes = Number(qnt[17]);
-				countWii = Number(qnt[18]);
-				countXbox = Number(qnt[19]);
-				countXbox360 = Number(qnt[20]);		
-				countTotal = countXbox360+countSupernes+countPlaystation1+countPlaystation2+countPlaystation4+countArcade+countAndroid+countXbox+countWii+countNes+countNeoGeo+countNintendo64+countNintendoDs+countGameBoyAdvance+countGameCube+countPC+countMegaDrive+countPsp+countNintendo3Ds+countMasterSystem+countGameBoy;
+				countSwitch = Number(qnt[18]);
+				countWii = Number(qnt[19]);
+				countXbox = Number(qnt[20]);
+				countXbox360 = Number(qnt[21]);		
+				countTotal = countXbox360+countSupernes+countPlaystation1+countPlaystation2+countPlaystation4+countArcade+countAndroid+countXbox+countWii+countNes+countNeoGeo+countNintendo64+countNintendoDs+countGameBoyAdvance+countGameCube+countPC+countMegaDrive+countPsp+countNintendo3Ds+countMasterSystem+countGameBoy+countSwitch;
 				  $("#total-arcade").html(countArcade);
 				  $("#total-android").html(countAndroid);
 				  $("#total-gameboyadvance").html(countGameBoyAdvance);
@@ -175,6 +195,7 @@ $(function() {
 				  $("#total-playstation4").html(countPlaystation4);
 				  $("#total-psp").html(countPsp);
 				  $("#total-supernes").html(countSupernes);
+				  $("#total-switch").html(countSwitch);
 				  $("#total-mastersystem").html(countMasterSystem);
 				  $("#total-gameboy").html(countGameBoy);
 				  $("#total-games-completed").html("Games: "+(countTotal-countDlc));
@@ -348,6 +369,14 @@ $(function() {
 				  ctx.fillStyle="rgb(10,58,120)";
 				  var widthGameBoy = 300*countGameBoy/countTotal;
 				  ctx.fillRect(0,0,widthGameBoy,200);
+				  //////////////////////////////////////////////////////////////
+				  
+				  ////////Switch
+				  var c=document.getElementById("graph-switch");
+				  var ctx=c.getContext("2d");
+				  ctx.fillStyle="rgb(2,30,90)";
+				  var widthSwitch = 300*countSwitch/countTotal;
+				  ctx.fillRect(0,0,widthSwitch,200);
 				  //////////////////////////////////////////////////////////////
 				  ///////////////////////////////////////////////////////////////////////////////////
 		}

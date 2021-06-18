@@ -18,6 +18,8 @@
       <h2>Track what you're doing!</h2>
 
       <img id="icone" src="_imagens/mario-home.png"/>
+	  
+	  <p id="myDiv1">Testando</p>
 
       <nav id="menu">
         <h1>Main Menu</h1>
@@ -73,7 +75,8 @@
 				  <li value="Playstation 2">Playstation 2</li>
 				  <li value="Playstation 4">Playstation 4</li>
 				  <li value="PSP">PSP</li>
-				  <li value="Super Nintendo">Super Nintendo</li>			  
+				  <li value="Super Nintendo">Super Nintendo</li>
+				  <li value="Switch">Switch</li>				  
 				  <li value="Wii">Wii</li>
 				  <li value="Xbox">Xbox</li>
 				  <li value="Xbox 360">Xbox 360</li>	
@@ -103,11 +106,12 @@
 			</ul>
 		</li>
 		<li id="delete">Delete</li>
+		<li id="completeFullGame">100%</li>
 	  </ul>
       <table id="tabela">
         <thead>
           <caption>Playthroughs</caption>
-          <tr><th>Name</th><th>Platform</th><th>Genre</th><th>Status</th></tr>
+          <tr><th>Name</th><th>Platform</th><th>Genre</th><th>Status</th><th>100%</th></tr>
           <tr>
 		  
             <th><input type="text" id="nameFilter"/></th>
@@ -131,6 +135,7 @@
 				  <option value="Playstation 4">Playstation 4</option>
 				  <option value="PSP">PSP</option>
 				  <option value="Super Nintendo">Super Nintendo</option>			  
+				  <option value="Switch">Switch</option>
 				  <option value="Wii">Wii</option>
 				  <option value="Xbox">Xbox</option>
 				  <option value="Xbox 360">Xbox 360</option>			  
@@ -156,6 +161,10 @@
 				  <option value="Completed">Completed</option>
 				  <option value="Playing">Playing</option>
 				</select></th>
+			<th><select id="fullGame">
+				  <option value="All">All</option>
+				  <option value="check">&#10003</option>
+				</select></th>
           </tr>
         </thead>
         <tbody id="games-list">
@@ -163,15 +172,16 @@
 				initialFilter("games");
 			</script>
         </tbody>
-        <tr><td id="total" colspan="4"></td></tr>
+        <tr><td id="total" colspan="5"></td></tr>
       </table>
 	  <input id="randomConsole" type="button" value="Choose a console game!"/></br>
+	  <input id="randomNewConsole" type="button" value="Choose a new console game!"/></br>
 	  <input id="randomPortable" type="button" value="Choose a portable game!"/></br>
 	  <input id="randomPlatform" type="button" value="Choose a platform!"/></br>
 	  <table id="tabela-dlc">
         <thead>
           <caption>DLC's and Expansions</caption>
-          <tr><th>Name</th><th>Platform</th><th>Genre</th><th>Status</th></tr>
+          <tr><th>Name</th><th>Platform</th><th>Genre</th><th>Status</th><th>100%</th></tr>
           <tr>
 		  
             <th><input type="text" id="nameFilterDlc"/></th>
@@ -194,7 +204,8 @@
 				  <option value="Playstation 2">Playstation 2</option>
 				  <option value="Playstation 4">Playstation 4</option>
 				  <option value="PSP">PSP</option>
-				  <option value="Super Nintendo">Super Nintendo</option>			  
+				  <option value="Super Nintendo">Super Nintendo</option>	
+				  <option value="Switch">Switch</option>				  
 				  <option value="Wii">Wii</option>
 				  <option value="Xbox">Xbox</option>
 				  <option value="Xbox 360">Xbox 360</option>			  
@@ -220,6 +231,10 @@
 				  <option value="Completed">Completed</option>
 				  <option value="Playing">Playing</option>
 				</select></th>
+			<th><select id="fullGameDlc">
+				  <option value="All">All</option>
+				  <option value="check">&#10003</option>
+				</select></th>
           </tr>
         </thead>
 	    <tbody id="games-dlc-list">
@@ -227,7 +242,7 @@
 				initialFilter("dlc");
 			</script>
         </tbody>
-		<tr><td id="total-dlc" colspan="4"></td></tr>
+		<tr><td id="total-dlc" colspan="5"></td></tr>
       </table>
 
       <img id="cover" src=""/>
@@ -256,6 +271,7 @@
           <tr><td>Playstation 4</td><td id="total-playstation4" class="centro"></td><td><canvas id="graph-play4"></canvas></td></tr>
 		  <tr><td>PSP</td><td id="total-psp" class="centro"></td><td><canvas id="graph-psp"></canvas></td></tr>
           <tr><td>Super Nintendo</td><td id="total-supernes" class="centro"></td><td><canvas id="graph-supernes"></canvas></td></tr>
+		  <tr><td>Switch</td><td id="total-switch" class="centro"></td><td><canvas id="graph-switch"></canvas></td></tr>
           <tr><td>Wii</td><td id="total-wii" class="centro"></td><td><canvas id="graph-wii"></canvas></td></tr>
           <tr><td>Xbox</td><td id="total-xbox" class="centro"></td><td><canvas id="graph-xbox"></canvas></td></tr>
           <tr><td>Xbox 360</td><td id="total-xbox360" class="centro"></td><td><canvas id="graph-360"></canvas></td></tr>

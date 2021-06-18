@@ -1,7 +1,15 @@
 <?php
+
+	function console_log( $data ){
+	  echo '<script>';
+	  echo 'console.log('. json_encode( $data ) .')';
+	  echo '</script>';
+	}
+	
 	////Faz a conexão com o banco
 	$conecta = mysqli_connect("127.0.0.1", "root", "") or print (mysqli_error()); 
 	mysqli_select_db($conecta, "games") or print(mysqli_error()); 
+	mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 	///////////////////////////////
 	
 	////Pega os dados do formulário
@@ -38,11 +46,20 @@
 		$genre = $_POST["genre"];
 		$status = $_POST["status"];
 		$image = $_POST["image"];
-		$query = "INSERT INTO `$option` VALUES('$name','$platform','$genre','$status','$image');";
+		if($option == "games" || $option == "dlc") {
+			$query = "INSERT INTO `$option` VALUES('$name','$platform','$genre','$status','$image', '');";
+		} else {
+			$query = "INSERT INTO `$option` VALUES('$name','$platform','$genre','$status','$image');";
+		}
 		echo $query;
 		
+		try {
+			console_log("executando query");
 			////executa a query no banco
-		$result = mysqli_query($conecta, $query); 
+			$result = mysqli_query($conecta, $query); 
+		} catch (mysqli_sql_exception $e) {
+			console_log(mysqli_error($conecta));
+		}
 		/////fecha a conexão
 		mysqli_close($conecta); 
 		
